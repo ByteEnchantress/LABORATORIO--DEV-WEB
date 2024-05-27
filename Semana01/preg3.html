@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        h1.about-title {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .emmet-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .emmet-code:hover {
+            background-color: #555;
+        }
+
+        .result-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .click-hint {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            background-color: #0bc4ca;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        th:hover {
+            background-color: #0aa4a5;
+        }
+
+        @media (max-width: 600px) {
+            th, td {
+                padding: 8px;
+            }
+
+            h1.about-title {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="about-title">Código Emmet</h1>
+    <p class="click-hint">Haz clic en el código Emmet para ver el HTML generado</p>
+    <p><span class="emmet-code" onclick="showResult()">table>(thead>tr>th{ID}+th{nombres}+th{apellidos}+th{dirección})+(tbody>tr*20>td{$}+td{Nombre}+td{Apellido}+td{Dirección})</span></p>
+    <div class="result-code" id="resultCode"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>nombres</th>
+                <th>apellidos</th>
+                <th>dirección</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+            </tr>
+        </tbody>
+        <tr id=""></tr>
+    </table>
+
+    <script>
+        function showResult() {
+            const resultCode = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>nombres</th>
+                        <th>apellidos</th>
+                        <th>dirección</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Dirección</td>
+                    </tr>
+                </tbody>
+                <tr id=""></tr>
+            </table>
+            `;
+            const resultCodeElement = document.getElementById("resultCode");
+            resultCodeElement.innerText = resultCode;
+            resultCodeElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
+

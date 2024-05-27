@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1.about-title {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .emmet-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .emmet-code:hover {
+            background-color: #555;
+        }
+
+        .result-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .click-hint {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .layout {
+            background-color: #b0d4e3;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header, nav, footer {
+            background-color: #0098db;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        header {
+            flex: 0 1 60px;
+            background-color: #1388bb;
+        }
+
+        nav {
+            flex: 0 1 40px;
+        }
+
+        footer {
+            flex: 0 1 40px;
+            margin-top: auto;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 10px;
+        }
+
+        section {
+            display: flex;
+            flex: 3;
+            padding: 20px;
+            background-color: #0080c0;
+            margin-right: 10px;
+        }
+
+        aside {
+            flex: 1;
+            padding: 20px;
+            background-color: #137dab;
+        }
+
+        @media (max-width: 600px) {
+            h1.about-title {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="about-title">Código Emmet</h1>
+    <p class="click-hint">Haz clic en el código Emmet para ver el HTML generado</p>
+    <p><span class="emmet-code" onclick="showResult()">div>(header#header+nav#nav+main>(section#section>article#article)+aside#aside+footer#footer)</span></p>
+    <div class="result-code" id="resultCode"></div>
+
+    <div class="layout">
+        <header id="header">Header</header>
+        <nav id="nav">Navigation</nav>
+        <main>
+            <section id="section">
+                <article id="article">Article</article>
+            </section>
+            <aside id="aside">Aside</aside>
+        </main>
+        <footer id="footer">Footer</footer>
+    </div>
+
+    <script>
+        function showResult() {
+            const resultCode = `
+<div>
+    <header id="header">Header</header>
+    <nav id="nav">Navigation</nav>
+    <main>
+        <section id="section">
+            <article id="article">Article</article>
+        </section>
+        <aside id="aside">Aside</aside>
+    </main>
+    <footer id="footer">Footer</footer>
+</div>
+            `;
+            const resultCodeElement = document.getElementById("resultCode");
+            resultCodeElement.innerText = resultCode.trim();
+            resultCodeElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>
