@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        h1.about-title {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .emmet-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .emmet-code:hover {
+            background-color: #555;
+        }
+
+        .result-code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .click-hint {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1 class="about-title">Código Emmet</h1>
+    <p class="click-hint">Haz clic en el código Emmet para ver el HTML generado</p>
+    <p><span class="emmet-code" onclick="showResult()">header#header>div#menu>(li>a)*5</span></p>
+    <div class="result-code" id="resultCode"></div>
+
+    <header id="header">
+        <div id="menu">
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        function showResult() {
+            const resultCode = `
+<header id="header">
+    <div id="menu">
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </div>
+</header>
+            `;
+            const resultCodeElement = document.getElementById("resultCode");
+            resultCodeElement.innerText = resultCode;
+            resultCodeElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
+
