@@ -1,0 +1,45 @@
+<!-- Manipular el html con un AddEventListener -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HMTL con AddEventListener</title>
+        <style>
+            #idparrafo {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+            }
+            /* Estilos para el formulario */
+            form {
+                text-align: center; /* Centrar el contenido del formulario */
+                padding: 20px; /* Espacio alrededor del contenido */
+                border: 2px solid #0a9794; /* Borde sólido de 2px con color gris claro */
+                background-color: #94e1ef; /* Color de fondo gris claro */
+                max-width: 400px; /* Ancho máximo del formulario */
+                margin: 0 auto; /* Centrar el formulario horizontalmente */
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <label for="">Ingrese un texto: </label>
+            <input type="text" name="" id="ingrese-texto">
+            <p id="idparrafo"> Look at me</p>
+        </form>
+        <script>
+            // Obtener referencia al input y al párrafo
+            var inputTexto = document.getElementById('ingrese-texto');
+            var parrafo = document.getElementById('idparrafo');
+        
+            // Agregar evento input al input de texto
+            inputTexto.addEventListener('input', function() {
+                // Obtener el valor del input de texto
+                var textoIngresado = inputTexto.value;
+        
+                // Actualizar el texto del párrafo con el texto ingresado
+                parrafo.textContent = textoIngresado;
+            });
+        </script>
+    </body>
+</html>

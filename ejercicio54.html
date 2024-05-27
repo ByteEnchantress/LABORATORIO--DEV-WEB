@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de Estudiantes</title>
+<style>
+    .tabla-container {
+        width: 80%; /* Anchura del contenedor */
+        margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+       
+    }
+    th, td {
+        border: 1px solid #817a7ad8;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #9ff6b2;
+        text-align: center;
+    }
+    #tablaEstudiantes td:first-child {
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="tabla-container">
+    <h2>Tabla de Estudiantes</h2>
+
+    <table id="tablaEstudiantes">
+      <tr>
+        <th>ID</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+      </tr>
+    </table>
+</div>
+
+<script>
+    // Array con los datos de los estudiantes
+    var estudiantes = [
+    { id: 1, apellidos: "Pérez", nombres: "Juan", direccion: "Calle 123", telefono: "1234567890" },
+    { id: 2, apellidos: "Gómez", nombres: "María", direccion: "Avenida XYZ", telefono: "0987654321" },
+    { id: 3, apellidos: "Martínez", nombres: "Carlos", direccion: "Av. Principal", telefono: "5678901234" },
+    { id: 4, apellidos: "López", nombres: "Ana", direccion: "Calle 456", telefono: "6789012345" },
+    { id: 5, apellidos: "Rodríguez", nombres: "Luis", direccion: "Plaza Central", telefono: "7890123456" },
+    { id: 6, apellidos: "González", nombres: "Laura", direccion: "Av. Libertad", telefono: "8901234567" },
+    { id: 7, apellidos: "Díaz", nombres: "Pedro", direccion: "Calle 789", telefono: "9012345678" },
+    { id: 8, apellidos: "Sánchez", nombres: "Marta", direccion: "Av. Bolívar", telefono: "0123456789" },
+    { id: 9, apellidos: "Romero", nombres: "Diego", direccion: "Av. Juárez", telefono: "1234567890" },
+    { id: 10, apellidos: "Martín", nombres: "Paula", direccion: "Calle 012", telefono: "2345678901" }
+];
+
+    // Obtener referencia a la tabla
+    var tabla = document.getElementById('tablaEstudiantes');
+
+    // Iterar sobre el array de estudiantes y agregar cada uno a la tabla
+    estudiantes.forEach(function(estudiante) {
+        var row = tabla.insertRow(); // Insertar una nueva fila en la tabla
+        var idCell = row.insertCell(0); // Insertar celda para el ID
+        var apellidosCell = row.insertCell(1); // Insertar celda para los apellidos
+        var nombresCell = row.insertCell(2); // Insertar celda para los nombres
+        var direccionCell = row.insertCell(3); // Insertar celda para la dirección
+        var telefonoCell = row.insertCell(4); // Insertar celda para el teléfono
+
+        // Agregar los datos del estudiante a las celdas correspondientes
+        idCell.textContent = estudiante.id;
+        apellidosCell.textContent = estudiante.apellidos;
+        nombresCell.textContent = estudiante.nombres;
+        direccionCell.textContent = estudiante.direccion;
+        telefonoCell.textContent = estudiante.telefono;
+    });
+</script>
+
+</body>
+</html>
