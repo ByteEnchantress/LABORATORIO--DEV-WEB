@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Semana 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins' sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #3ad207;
+            color: white;
+            border-radius: 5px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .exercise {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 18px;
+        }
+
+        .exercise p {
+            color: #555;
+        }
+
+        .exercise button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            background-color: #3ad207;
+            transition: background-color 0.3s ease;
+        }
+
+        .exercise button:hover {
+            background-color: #2e8d0e;
+        }
+
+        .exercise a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #01070e;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-to-top:hover {
+            background-color: #3ad207;
+            transform: translateY(-5px);
+        }
+
+        .back-to-top::before {
+            margin-top: 5px;
+            font-family: "Font Awesome 5 Free";
+            content: '^';
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SEMANA 03</h1>
+    </header>
+
+    <h2>Ejercicio 3.1</h2>
+    <div class="exercise">
+        <p>Diseñar una pagina web responsive con Bootstrap que contenga una fila y 12 columnas para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+        <button><a href="ejercicio1.html">Ver Ejercicio 3.1</a></button>
+    </div>
+
+    <h2>Ejercicio 3.2</h2>
+    <div class="exercise">
+        <p>Desarrollar el ejercicio 3.1 con Tailwind</p>
+        <button><a href="ejercicio2.html">Ver Ejercicio 3.2</a></button>
+    </div>
+
+    <h2>Ejercicio 3.3</h2>
+    <div class="exercise">
+        <p>Desarrollar el ejercicio 3.1 con CSS puro.</p>
+        <button><a href="ejercicio3.html">Ver Ejercicio 3.3</a></button>
+    </div>
+
+    <h2>Ejercicio 3.4</h2>
+    <div class="exercise">
+        <p>Diseñar una pagina web responsive con Bootstrap que contenga un diseño según la plantilla [ Plantilla BootStrap. Las características de la página deberá tener el mismo contenido texto e imagenes. Así también la misma distribución, colores, diseño, animación para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+        <button><a href="ejercicio4BT.html">Ver Ejercicio 3.4</a></button>
+    </div>
+
+    <h2>Ejercicio 3.5</h2>
+    <div class="exercise">
+        <p>Desarrollar el ejercicio 3.4 con Tailwind</p>
+        <button><a href="ejercicio4TW.html">Ver Ejercicio 3.5</a></button>
+    </div>
+
+    <h2>Ejercicio 3.6</h2>
+    <div class="exercise">
+        <p>Desarrollar el ejercicio 3.4 con CSS puro.</p>
+        <button><a href="ejercicio6.html">Ver Ejercicio 3.6</a></button>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo(0, 0);"></button>
+</body>
+</html>

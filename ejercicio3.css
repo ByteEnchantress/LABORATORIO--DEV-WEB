@@ -1,0 +1,70 @@
+body {
+    margin: 0; /* Elimina cualquier margen en el cuerpo */
+  }
+/* Estilos para el diseño de la rejilla */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+  }
+  .item {
+    width: calc(100% / 12); /* Distribuye en 12 columnas para pantallas xxl y xl */
+    max-width: calc(100% / 12); 
+    text-align: center;
+    /* margin: 5px; */
+  }
+  /* Estilos para los colores de fondo */
+  .one { background-color: #f675da; color:  black; }
+  .two { background-color: #26ecb7; color:  black; }
+  .three { background-color: #d57d86; color:  black; }
+  .four { background-color: #0ed0ee; color:  black; }
+  .five { background-color: #28a745; color:  black; }
+  .six { background-color: #6c757d; color:  black; }
+  .seven { background-color: #e7d49c; color: #000; }
+  .eight { background-color: #dc3545; color:  black; }
+  .nine { background-color: #569fec; color:  black; }
+  .ten { background-color: #ffc107; color: #000; }
+  .eleven { background-color: #f8f9fa; color: #000; }
+  .twelve { background-color: #6eee8c; color:  black; }
+
+  /* Estilos para la alineación del texto */
+.text-center { text-align: center; }
+
+/* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
+
+@media screen and (min-width: 1600px) {
+    .item {
+      width: calc(100% / 12); /* Distribuye en 12 columnas para pantallas xxl */
+      max-width: calc(100% / 12);
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+  .item {
+    width: calc(100% / 12); /* Distribuye en 12 columnas para pantallas xl */
+    max-width: calc(100% / 12);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .item {
+    width: calc(100% / 6); /* Distribuye en 6 columnas para pantallas lg */
+    max-width: calc(100% / 6);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    width: calc(100% / 4); /* Distribuye en 4 columnas para pantallas md */
+    max-width: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .item {
+    width: calc(100% / 3); /* Distribuye en 3 columnas para pantallas sm */
+    max-width: calc(100% / 3);
+  }
+}
+  
