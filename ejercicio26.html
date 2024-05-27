@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar con Modo de Visualización</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="ejercicio26.css">
+</head>
+<body>
+  <input type="checkbox" id="toggle-sidebar" class="toggle-sidebar">
+  <label for="toggle-sidebar" class="sidebar-toggle-label"><i class="fas fa-bars"></i></label>
+
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+        <h2><i class="fab fa-accusoft"></i><span class="sidebar-title">Sidebar</span></h2>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i><span class="sidebar-text">Inicio</span></a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i><span class="sidebar-text">Acerca</span></a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i><span class="sidebar-text">Servicios</span></a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i><span class="sidebar-text">Contacto</span></a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Contenido Principal</h1>
+      <p>Este es el contenido principal de la página.</p>
+    </div>
+  </div>
+</body>
+</html>

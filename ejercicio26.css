@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    padding: 40px 0;
+    margin: 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex; /* Mostrar elementos como flexbox */
+    align-items: center; /* Alinear elementos verticalmente */
+  }
+  
+  .sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px; /* Tamaño fijo para los iconos */
+    text-align: center;
+  }
+  
+  .sidebar ul li .sidebar-text {
+    display: block; /* Mostrar texto por defecto */
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .toggle-sidebar {
+    display: none;
+  }
+  
+  .sidebar-toggle-label {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .toggle-sidebar:checked ~ .container .sidebar {
+    width: 60px;
+  }
+  
+  .toggle-sidebar:checked ~ .container .sidebar ul li .sidebar-text {
+    display: none; /* Ocultar el texto al contraer */
+  }
+  .toggle-sidebar:checked ~ .container .sidebar h2 .sidebar-title {
+    display: none; /* Ocultar el texto al contraer */
+  }
+  
+  .toggle-sidebar:checked ~ .container .sidebar ul li a i {
+    margin-right: 0; /* Evitar el espacio entre el icono y el texto */
+  }
+  
+  
