@@ -1,0 +1,64 @@
+<!-- Manipular el html con un click -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostrar hora y día al hacer clic en un botón</title>
+<style>
+    /* Estilos para el mensaje de fecha y hora */
+    #mensajeFechaHora {
+        font-family: Arial, sans-serif; /* Cambia la fuente a Arial o cualquier otra fuente sans-serif */
+        color: blue; /* Cambia el color del texto a azul */
+    }
+    /* Estilos para el botón */
+    #miBoton {
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de fuente */
+        background-color: #4CAF50; /* Color de fondo */
+        color: white; /* Color del texto */
+        border: none; /* Borde */
+        border-radius: 5px; /* Borde redondeado */
+        cursor: pointer; /* Cursor */
+    }
+
+    /* Estilo cuando se pasa el mouse sobre el botón */
+    #miBoton:hover {
+        background-color: #45a049; /* Color de fondo diferente */
+    }
+</style>
+</head>
+<body>
+    <p id="miParrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <button id="miBoton">Haz clic aquí</button>
+
+    <script>
+        // Obtener referencia al botón y al párrafo
+        var boton = document.getElementById('miBoton');
+        var parrafo = document.getElementById('miParrafo');
+    
+        // Agregar evento onclick al botón
+        boton.onclick = function() {
+            // Obtener la fecha y hora actual
+            var fecha = new Date();
+            var hora = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
+            var dia = fecha.getDate();
+            var mes = fecha.getMonth() + 1; // Los meses en JavaScript se indexan desde 0
+            var año = fecha.getFullYear();
+    
+            // Formatear la fecha y hora
+            var horaFormateada = hora + ":" + minutos + ":" + segundos;
+            var fechaFormateada = dia + "/" + mes + "/" + año;
+            // Crear el mensaje de la fecha y hora
+            var mensajeFechaHora = "Hiciste clic en el botón el " + fechaFormateada + " a las " + horaFormateada;
+
+            // Reemplazar el texto del párrafo con el mensaje de la fecha y hora
+            parrafo.textContent = mensajeFechaHora;
+            parrafo.id = 'mensajeFechaHora';
+        };
+    </script>
+</body>
+</html>
+

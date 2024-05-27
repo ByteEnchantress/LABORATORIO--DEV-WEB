@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Estudiantes</title>
+    <style>
+        .tabla-container {
+            width: 80%; /* Anchura del contenedor */
+            margin: 0 auto; /* Centrar el contenedor horizontalmente */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        
+        }
+        th, td {
+            border: 1px solid #817a7ad8;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e497ce;
+            text-align: center;
+        }
+        #tablaEstudiantes td:first-child {
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabla-container">
+        <h2>Tabla de Estudiantes</h2>
+    
+        <table id="tablaEstudiantes">
+          <tr>
+            <th>ID</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+          </tr>
+        </table>
+    </div>
+    
+    <script>
+        // Definición de la clase Estudiante
+        class Estudiante {
+            constructor(id, apellidos, nombres, direccion, telefono) {
+                this.id = id;
+                this.apellidos = apellidos;
+                this.nombres = nombres;
+                this.direccion = direccion;
+                this.telefono = telefono;
+            }
+        }
+
+        // Definición de la clase TablaEstudiantes
+        class TablaEstudiantes {
+            constructor(estudiantes) {
+                this.estudiantes = estudiantes;
+                this.tabla = document.getElementById('tablaEstudiantes');
+                this.tbody = this.tabla.createTBody(); // Crear un cuerpo de tabla
+            }
+
+            // Método para mostrar los estudiantes en la tabla
+            mostrarEstudiantes() {
+                this.tbody.innerHTML = '';
+
+                this.estudiantes.forEach(estudiante => {
+                    this.agregarEstudiante(estudiante);
+                });
+            }
+
+            // Método para agregar un estudiante a la tabla
+            agregarEstudiante(estudiante) {
+                var fila = this.tbody.insertRow(); 
+                // Insertar celda para el ID
+                var idCell = fila.insertCell();
+                idCell.textContent = estudiante.id;
+                // Insertar celda para los apellidos
+                var apellidosCell = fila.insertCell();
+                apellidosCell.textContent = estudiante.apellidos;
+                // Insertar celda para los nombres
+                var nombresCell = fila.insertCell();
+                nombresCell.textContent = estudiante.nombres;
+                // Insertar celda para la dirección
+                var direccionCell = fila.insertCell();
+                direccionCell.textContent = estudiante.direccion;
+                // Insertar celda para el teléfono
+                var telefonoCell = fila.insertCell();
+                telefonoCell.textContent = estudiante.telefono;
+            }
+        }
+
+        // Array con los datos de los estudiantes
+        var estudiantes = [
+            { id: 1, apellidos: "Pérez", nombres: "Juan", direccion: "Calle 123", telefono: "1234567890" },
+            { id: 2, apellidos: "Gómez", nombres: "María", direccion: "Avenida XYZ", telefono: "0987654321" },
+            { id: 3, apellidos: "Martínez", nombres: "Carlos", direccion: "Av. Principal", telefono: "5678901234" },
+            { id: 4, apellidos: "López", nombres: "Ana", direccion: "Calle 456", telefono: "6789012345" },
+            { id: 5, apellidos: "Rodríguez", nombres: "Luis", direccion: "Plaza Central", telefono: "7890123456" },
+            { id: 6, apellidos: "González", nombres: "Laura", direccion: "Av. Libertad", telefono: "8901234567" },
+            { id: 7, apellidos: "Díaz", nombres: "Pedro", direccion: "Calle 789", telefono: "9012345678" },
+            { id: 8, apellidos: "Sánchez", nombres: "Marta", direccion: "Av. Bolívar", telefono: "0123456789" },
+            { id: 9, apellidos: "Romero", nombres: "Diego", direccion: "Av. Juárez", telefono: "1234567890" },
+            { id: 10, apellidos: "Martín", nombres: "Paula", direccion: "Calle 012", telefono: "2345678901" }
+        ];
+
+        // Crear una instancia de la clase TablaEstudiantes
+        var tablaEstudiantes = new TablaEstudiantes(estudiantes);
+
+        // Mostrar los estudiantes en la tabla
+        tablaEstudiantes.mostrarEstudiantes();
+    </script>
+</body>
+</html>

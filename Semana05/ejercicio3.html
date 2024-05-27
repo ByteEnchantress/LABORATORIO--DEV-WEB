@@ -1,0 +1,93 @@
+<!-- Obtener y manipular datos del dom mostrando un formulario con 2 input text para el ingreso de nuemros y msotrar el resultado de la suma -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de dos números</title>
+    <style>
+        /* Estilos para el formulario */
+        form {
+            text-align: left; /* Alinear el contenido del formulario a la izquierda */
+            padding: 20px; /* Espacio alrededor del contenido */
+            border: 2px solid #290808; /* Borde sólido de 2px con color gris claro */
+            background-color: #8cea84; /* Color de fondo gris claro */
+            max-width: 400px; /* Ancho máximo del formulario */
+            margin: 0 auto; /* Centrar el formulario horizontalmente */
+        }
+
+        #boton {
+            margin-top: 10px;
+            padding: 10px 20px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de fuente */
+            background-color: black; /* Color de fondo */
+            color: white; /* Color del texto */
+            border: none; /* Borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cursor */
+            display: block; /* Convertir el botón en un elemento bloque */
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
+        #resultado{
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Estilo para los labels */
+        label {
+            display: block; /* Mostrar cada label en una línea */
+        }
+
+        /* Estilo para los inputs */
+        input[type="text"] {
+            width: 100%; /* Ocupar todo el ancho disponible */
+            box-sizing: border-box; /* Incluir el padding y border en el ancho */
+        }
+    </style>
+</head>
+<body>
+    <form id="formularioSuma">
+        <label for="numero1">Ingrese el primer número: </label>
+        <input type="text" name="numero1" id="numero1">
+        <br><br>
+        <label for="numero2">Ingrese el segundo número: </label>
+        <input type="text" name="numero2" id="numero2">
+        <br><br>
+        <input type="submit" id="boton" value="Sumar">
+        <p id="resultado"></p>
+    </form>
+    
+   
+
+    <script>
+        // Obtener referencia al formulario y al párrafo para mostrar el resultado
+        var formulario = document.getElementById('formularioSuma');
+        var resultadoParrafo = document.getElementById('resultado');
+    
+        // Agregar evento submit al formulario
+        formulario.addEventListener('submit', function(event) {
+            // Detener el comportamiento predeterminado del formulario para evitar que se recargue la página
+            event.preventDefault();
+    
+            // Obtener los valores de los inputs
+            var numero1 = parseFloat(document.getElementById('numero1').value);
+            var numero2 = parseFloat(document.getElementById('numero2').value);
+    
+            // Verificar si los valores ingresados son números válidos
+            if (isNaN(numero1) || isNaN(numero2)) {
+                resultadoParrafo.textContent = 'Por favor, ingrese números válidos.';
+            } else {
+                // Calcular la suma
+                var suma = numero1 + numero2;
+                // Mostrar el resultado
+                resultadoParrafo.textContent = 'La suma de ' + numero1 + ' y ' + numero2 + ' es: ' + suma;
+            }
+        });
+    </script>
+
+    
+</body>
+</html>

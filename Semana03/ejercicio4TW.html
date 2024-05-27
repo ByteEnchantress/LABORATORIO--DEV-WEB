@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinExpert</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- Top Navbar -->
+    <nav class="bg-gray-200 py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+        <p class="text-sm text-gray-700">Welcome to FinExpert, your expert in managing your finances!</p>
+        <div class="space-x-2">
+            <a href="#" class="text-gray-700 bg-gray-300 w-7 h-7 inline-flex items-center justify-center rounded-full hover:bg-white hover:text-blue-400"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-700 bg-gray-300 w-7 h-7 inline-flex items-center justify-center rounded-full hover:bg-white hover:text-blue-400"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-gray-700 bg-gray-300 w-7 h-7 inline-flex items-center justify-center rounded-full hover:bg-white hover:text-blue-400"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Middle Navbar -->
+    <nav class="bg-white py-5">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#">
+            <img src="imagenes/logo.png" alt="logo" class="w-24">
+        </a>
+        <div class="flex space-x-8">
+            <div class="flex items-center space-x-2">
+            <img src="imagenes/reloj.png" alt="atencion" class="w-8 h-8">
+            <address class="not-italic text-gray-700">
+                <span class="font-bold block">Mon - Sat: 9:00-18:00</span>
+                <span class="block">Sunday CLOSED</span>
+            </address>
+            </div>
+            <div class="flex items-center space-x-2">
+            <img src="imagenes/ubicacion.png" alt="ubicacion" class="w-8 h-8">
+            <address class="not-italic text-gray-700">
+                <a href="#" class="text-gray-800 no-underline">
+                <span class="font-bold block">267 Park Avenue</span>
+                <span class="block">New York, NY 90210</span>
+                </a>
+            </address>
+            </div>
+            <div class="flex items-center space-x-2">
+            <img src="imagenes/telefono.png" alt="contacto" class="w-8 h-8">
+            <address class="not-italic text-gray-700">
+                <a href="tel:#" class="font-bold block text-gray-800 no-underline">1-800-1234-5671</a>
+                <a href="mailto:#" class="text-gray-800 no-underline">info@demolink.org</a>
+            </address>
+            </div>
+        </div>
+        </div>
+    </nav>
+        
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-white text-xl font-bold">Find Expert</div>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white">About</a>
+                <a href="#" class="text-gray-300 hover:text-white">Services</a>
+                <a href="#" class="text-gray-300 hover:text-white">Blog</a>
+                <a href="#" class="text-gray-300 hover:text-white">Pages</a>
+                <a href="#" class="text-gray-300 hover:text-white">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-96 overflow-hidden md:h-120">
+
+            <!-- Item 1 -->
+            <div class="absolute w-full h-full top-0 left-0 flex flex-col justify-center items-start text-white text-left" data-carousel-item>
+                <img src="imagenes/slide1.png" class="w-full h-full object-cover" alt="Slide 1">
+                <div class="absolute top-1/2 left-0 transform -translate-y-1/2 ml-8 pl-20">
+                    <h1 class="text-5xl font-bold">Expert Financial Advice</h1>
+                    <p class="mt-2">With over 20 years of experience we'll ensure <br> you always get the best guidance</p>
+                    <button class="mt-4 px-4 py-2 bg-blue-500 rounded-lg hover:bg-cyan-400 focus:outline-none focus:bg-blue-600">Our Services</button>
+                    <button class="mt-4 px-4 py-2 bg-blue-500 rounded-lg hover:bg-cyan-400 focus:outline-none focus:bg-blue-600">Purchase now</button>
+                
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="absolute w-full h-full top-0 left-0 flex flex-col justify-center items-start text-white text-left" data-carousel-item>
+                <img src="imagenes/slide2.png" class="w-full h-full object-cover" alt="Slide 2">
+                <div class="absolute top-1/2 left-0 transform -translate-y-1/2 ml-8 pl-20">
+                    <h1 class="text-5xl font-bold text-black">Solutions that<br>never miss the aim</h1>
+                    <button class="mt-4 px-4 py-2 bg-blue-500 rounded-lg hover:bg-cyan-400 focus:outline-none focus:bg-blue-600">Learn More</button>
+                    <button class="mt-4 px-4 py-2 bg-blue-500 rounded-lg hover:bg-cyan-400 focus:outline-none focus:bg-blue-600">Our Services</button>
+                </div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <!-- Agrega más botones según la cantidad de imágenes -->
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none left-0" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-50 group-hover:bg-opacity-75 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.707 16.707a1 1 0 0 1-1.414 0L5.586 12.3a1 1 0 0 1 0-1.414L10.293 7.293a1 1 0 0 1 1.414 1.414l-3.293 3.293 3.293 3.293a1 1 0 0 1 0 1.414z" clip-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none right-0" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-50 group-hover:bg-opacity-75 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.293 12.707a1 1 0 0 1 0-1.414l3.293-3.293-3.293-3.293a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    
+    
+    <script>
+        const carousel = document.querySelector('[data-carousel="slide"]');
+        const carouselItems = carousel.querySelectorAll('[data-carousel-item]');
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+            carouselItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(currentIndex);
+        }
+    
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(currentIndex);
+        }
+    
+        setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
+    </script>
+
+    <!-- Services Section -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <img src="imagenes/dolar.png" class="w-12 mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Financial Planning</h3>
+                    <p class="text-gray-600">We'll help you make sensible decisions about money that can help you achieve your goals in life.</p>
+                </div>
+                <div>
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <img src="imagenes/tea.png" class="w-12 mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Retirement Planning</h3>
+                    <p class="text-gray-600">Use our strategies and retirement advice, including retirement calculators to help you retire faster.</p>
+                </div>
+                <div>
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <img src="imagenes/barra.png" class="w-12 mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Risk Management</h3>
+                    <p class="text-gray-600">Risk management is intended to manage financial and other losses associated with risks to your assets or business.</p>
+                </div>
+                <div>
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <img src="imagenes/maleta.png" class="w-12 mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Taxation</h3>
+                    <p class="text-gray-600">Tax planning considers the tax implications of business decisions, usually with the goal of minimizing tax liability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="bg-gray-800 text-white py-12 px-6 relative">
+        <div class="container mx-auto flex justify-between items-center relative z-10">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">What We Do</h2>
+                <p>We provide expert financial advice for businesses and individuals.</p>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See All Services</a>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <div class="hidden md:block absolute inset-0 z-0">
+            <img src="imagenes/financial.png" class="w-full h-full object-cover rounded" alt="Imagen representativa">
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-4xl font-bold mb-6 text-center">About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
+                <div class="md:col-span-1">
+                    <div class="flex justify-center space-x-4">
+                        <button class="px-4 py-2 bg-blue-400 text-white font-bold rounded focus:outline-none">Facts</button>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 font-bold rounded focus:outline-none">Advantages</button>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 font-bold rounded focus:outline-none">Skills</button>
+                    </div>
+                    <div class="mt-4  text-gray-600">
+                        <p>Our company is your one stop solution for all needs. There is no doubt that we are the leaders and you don’t have to worry about our image because it is perfect.</p>
+                        <div class="mt-4 flex justify-around text-blue-600">
+                            <div>
+                                <p class="text-4xl font-bold">275</p>
+                                <p>Cases completed</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold">19</p>
+                                <p>Consultants</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold">130</p>
+                                <p>Awards won</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-2 text-gray-600 px-8">
+                    <h3 class="text-xl font-bold mb-2 font-display ">Doing the right thing, at the right time.</h3>
+                    <p class="font-display">Welcome to the leading company on the market! Our success is driven by the highest quality customer service. We can meet the requirements even of the whimsical clients; there are no complex tasks for us! Thanks for your choice! Our company can boast the reputation of the trusted partner known worldwide. We are proud of the uncompromising quality of services.</p>
+                    <a href="#" class="inline-block mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimovial -->
+    <section id="testimonials" aria-label="What our customers are saying" class="bg-slate-50 py-20 sm:py-32">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl md:text-center">
+            <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl font-bold ">What Our Customers Are Saying</h2>
+            </div>
+            <ul role="list"
+            class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+            <li>
+                <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+                <li>
+                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                        <svg aria-hidden="true"
+                        width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                       
+                        </svg>
+                        <blockquote class="relative">
+                            <p class="text-lg tracking-tight text-slate-900">I love the fitness apparel and gear I purchased from
+                            this site. The quality is exceptional and the prices are unbeatable.</p>
+                        </blockquote>
+                        <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                            <div>
+                            <div class="font-display text-base text-slate-900">Sheryl Berge</div>
+                            </div>
+                            <div class="overflow-hidden rounded-full bg-slate-50">
+                            <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/men/15.jpg">
+                            </div>
+                        </figcaption>
+                    </figure>
+                </li>
+                </ul>
+            </li>
+            <li>
+                <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+                <li>
+                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                        <svg aria-hidden="true"
+                        width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                      
+                        </svg>
+                        <blockquote class="relative">
+                            <p class="text-lg tracking-tight text-slate-900">As a professional athlete, I rely on high-performance
+                            gear for my training. This site offers a great selection of top-notch products.</p>
+                        </blockquote>
+                        <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                            <div>
+                            <div class="font-display text-base text-slate-900">Leland Kiehn</div>
+                            </div>
+                            <div class="overflow-hidden rounded-full bg-slate-50">
+                            <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/women/15.jpg">
+                            </div>
+                        </figcaption>
+                    </figure>
+                </li>
+                </ul>
+            </li>
+            <li>
+                <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+                <li>
+                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10"><svg aria-hidden="true"
+                        width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
+                        
+                    </svg>
+                    <blockquote class="relative">
+                        <p class="text-lg tracking-tight text-slate-900">The fitness apparel I bought here fits perfectly and
+                        feels amazing. I highly recommend this store to anyone looking for quality gear.</p>
+                    </blockquote>
+                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                        <div>
+                        <div class="font-display text-base text-slate-900">Peter Renolds</div>
+                        </div>
+                        <div class="overflow-hidden rounded-full bg-slate-50">
+                        <img alt="" class="h-14 w-14 object-cover" style="color:transparent" src="https://randomuser.me/api/portraits/men/10.jpg">
+                        </div>
+                    </figcaption>
+                    </figure>
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 mt-auto px-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <img src="imagenes/logo2.png" alt="logo" class="w-50">
+                <p>Welcome to the leading company delivering services that combine quality, reliability and compliance!</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Navigation</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:underline">Contacts</a></li>
+                    <li><a href="#" class="hover:underline">Typography</a></li>
+                    <li><a href="#" class="hover:underline">Services</a></li>
+                    <li><a href="#" class="hover:underline">Careers</a></li>
+                    <li><a href="#" class="hover:underline">Our team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Contact info</h3>
+                <ul>
+                    <li><span class="font-bold">Phone:</span> <a href="tel:+12345678910">(123) 45678910</a></li>
+                    <li><span class="font-bold">Email:</span> <a href="mailto:info@demolink.org">info@demolink.org</a></li>
+                    <li><span class="font-bold">Hours:</span> Mon - Sat: 9:00 - 18:00</li>
+                    <li><span class="font-bold">Address:</span> 267 Park Avenue, New York, NY 90210</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Newsletter</h3>
+                <p>Get latest updates and offers.</p>
+                <form class="mt-4 flex">
+                    <input type="email" placeholder="E-Mail" class="w-full p-2 rounded-l bg-gray-700 text-gray-300 border border-gray-600">
+                    <button class="bg-blue-400 text-white px-4 py-2 rounded-r">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 text-center text-gray-500">
+            &copy; 2024 FinExpert. Privacy Policy
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

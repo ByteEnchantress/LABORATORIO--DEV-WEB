@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinExpert</title>
+    <link rel="stylesheet" href="ejercicio6.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        Welcome to FinExpert, your expert in managing your finances!
+    </div>
+    <div class="contact-bar">
+        <div class="logo">
+            <span>[</span>FinExpert<span>]</span>
+        </div>
+        <div class="hours">
+            <img src="https://img.icons8.com/ios-filled/24/000000/clock.png" alt="Clock Icon">
+            Mon - Sat: 9:00-18:00<br>Sunday CLOSED
+        </div>
+        <div class="address">
+            <img src="https://img.icons8.com/ios-filled/24/000000/marker.png" alt="Location Icon">
+            267 Park Avenue<br>New York, NY 90210
+        </div>
+        <div class="phone">
+            <img src="https://img.icons8.com/ios-filled/24/000000/phone.png" alt="Phone Icon">
+            1-800-1234-5671<br>info@demolink.org
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/facebook-new.png" alt="Facebook Icon"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/twitter.png" alt="Twitter Icon"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram Icon"></a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#blog">Blog</a>
+        <a href="#pages">Pages</a>
+        <a href="#contacts">Contacts</a>
+    </div>
+    <!-- CARRUSEL -->
+    <div class="carousel">
+        <input type="radio" id="slide1" name="slides" checked>
+        <input type="radio" id="slide2" name="slides">
+        
+        <div class="slide" id="slide1_content">
+            <img src="imagenes/slide1.png" alt="slide1">
+            <div class="text">
+                <h1>Expert Financial Advice</h1>
+                <p>With over 20 years of experience we'll ensure <br> you always get the best guidance</p>
+                <div class="buttons">
+                    <a href="#our-services">Our Services</a>
+                    <a href="#purchase-now" class="secondary">Purchase now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide2_content">
+            <img src="imagenes/slide2.png" alt="slide2">
+            <div class="text">
+                <h1 class="titleslider">Solutions that<br>never miss the aim</h1>
+                <div class="buttons">
+                    <a href="#learn-more">Learn More</a>
+                    <a href="#our-services" class="secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="prev" onclick="document.getElementById('slide1').checked = true">&#10094;</button>
+        <button class="next" onclick="document.getElementById('slide2').checked = true">&#10095;</button>
+    </div>
+    <!-- SERVICES -->
+    <div class="services-container">
+        <div class="service-item">
+            <div class="icon">
+                <img src="imagenes/dolar.png" alt="Financial Planning">
+            </div>
+            <h3>Financial Planning</h3>
+            <p>We'll help you make sensible decisions about money that can help you achieve your goals in life.</p>
+        </div>
+        <div class="service-item">
+            <div class="icon">
+                <img src="imagenes/tea.png" alt="Retirement Planning">
+            </div>
+            <h3>Retirement Planning</h3>
+            <p>Use our strategies and retirement advice, including retirement calculators to help you retire faster.</p>
+        </div>
+        <div class="service-item">
+            <div class="icon">
+                <img src="imagenes/barra.png" alt="Risk Management">
+            </div>
+            <h3>Risk Management</h3>
+            <p>Risk management is intended to manage financial and other losses associated with risks to your assets or business.</p>
+        </div>
+        <div class="service-item">
+            <div class="icon">
+                <img src="imagenes/maleta.png" alt="Taxation">
+            </div>
+            <h3>Taxation</h3>
+            <p>Tax planning considers the tax implications of business decisions, usually with the goal of minimizing tax liability.</p>
+        </div>
+    </div>
+    <!-- WHAT WE DO -->
+    <div class="what-we-do-section">
+        <div class="content">
+            <h1>What We Do</h1>
+            <p>We provide expert financial advice for businesses and individuals</p>
+        </div>
+        <a href="#services" class="btn">See All Services</a>
+    </div>
+    <!-- about us -->
+    <div class="about-us">
+        <h1>About Us</h1>
+        <div class="tabs">
+            <div class="tab active" id="facts-tab">Facts</div>
+            <div class="tab" id="advantages-tab">Advantages</div>
+            <div class="tab" id="skills-tab">Skills</div>
+        </div>
+        <div class="tab-content">
+            <div id="facts" class="content active">
+                <p>Our company is your one stop solution for all needs. There is no doubt that we are the leaders and you don't have to worry about our image because it is perfect.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="number">275</span>
+                        <span class="label">Cases completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">19</span>
+                        <span class="label">Consultants</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">130</span>
+                        <span class="label">Awards won</span>
+                    </div>
+                </div>
+            </div>
+            <div id="advantages" class="content">
+                <!-- Content for Advantages tab -->
+            </div>
+            <div id="skills" class="content">
+                <!-- Content for Skills tab -->
+            </div>
+        </div>
+        <div class="right-section">
+            <h2>Doing the right thing, at the right time.</h2>
+            <p>Welcome to the leading company on the market! Our success is driven by the highest quality customer service. We can meet the requirements even of the whimsical clients; there are no complex tasks for us! Thanks for your choice! Our company can boast the reputation of the trusted partner known worldwide. We are proud of the uncompromising quality of services.</p>
+            <button>Read More</button>
+        </div>
+    </div>
+    <!-- TESTIMONIAL -->
+    <div class="testimonials-section">
+        <h1>Testimonials</h1>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <img src="imagenes/first person.jpeg" alt="Adam Watson">
+                <p>Hi, guys! You've solved my problem in no time! Your efficient services and customer care are second to none!</p>
+                <h3>Adam Watson</h3>
+                <span>CEO & Founder</span>
+            </div>
+            <div class="testimonial">
+                <img src="imagenes/second person.jpeg" alt="Louise Smith">
+                <p>Wow, I'm so happy with your service. You managed to exceed my expectations! You guys are very efficient.</p>
+                <h3>Louise Smith</h3>
+                <span>CEO & Founder</span>
+            </div>
+            <div class="testimonial">
+                <img src="imagenes/trhird person.jpeg" alt="Jack Walsh">
+                <p>Great organization!! Your prompt answer became a pleasant surprise for me. You've rendered an invaluable service! Thank you!</p>
+                <h3>Jack Walsh</h3>
+                <span>CEO & Founder</span>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><span class="logo-highlight">Fin</span>Expert</h2>
+                <p>Welcome to the leading company delivering services that combine quality, reliability and compliance!</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            <div class="footer-navigation">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Our team</a></li>
+                    <li><a href="#">Typography</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact info</h3>
+                <ul>
+                    <li><i class="phone-icon"></i>(123) 45678910</li>
+                    <li><i class="email-icon"></i>info@demolink.org</li>
+                    <li><i class="clock-icon"></i>Mon - Sat: 9:00 - 18:00</li>
+                    <li><i class="location-icon"></i>267 Park Avenue, New York, NY 90210</li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Get latest updates and offers.</p>
+                <form>
+                    <input type="email" placeholder="E-Mail">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 FinExpert. <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
