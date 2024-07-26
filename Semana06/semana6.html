@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 6</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #380c6e;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #380c6e;
+            }
+
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
+
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
+
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
+
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .emmet-card li {
+                margin: 5px 0;
+            }
+
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+
+            .emmet-card h3 {
+                color: #380c6e;
+                margin-top: 20px;
+            }
+
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #380c6e;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #380c6e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #e4d2f9;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #090211;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #160827;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1>SEMANA 06</h1>
+    </header>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Creación de proyectos de React, Vite y Node.js</h2>
+        <div class="content">
+            <div>
+                <img src="imagessem6/react.png" alt="React Logo">
+                <p><strong>React:</strong> es una biblioteca de JavaScript para construir interfaces de usuario. Facilita la creación de aplicaciones web interactivas y dinámicas mediante el uso de componentes reutilizables y un modelo de datos unidireccional.</p>
+            </div>
+            <div>
+                <img src="imagessem6/vite.jpg" alt="Vite Logo">
+                <p><strong>Vite:</strong> es una herramienta de desarrollo que mejora la experiencia de desarrollo de aplicaciones web. Proporciona una configuración mínima y un servidor de desarrollo rápido, así como un sistema de construcción optimizado.</p>
+            </div>
+            <div>
+                <img src="imagessem6/node.jpeg" alt="Node.js Logo">
+                <p><strong>Node.js:</strong> es un entorno de ejecución para JavaScript que permite ejecutar código JavaScript en el servidor. Facilita la creación de aplicaciones de red escalables y de alto rendimiento, utilizando un modelo de E/S no bloqueante.</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <h3>Pasos para crear un proyecto con React</h3>
+                <p>Para iniciar un nuevo proyecto con React, sigue estos pasos:</p>
+                <ul>
+                    <li><code>npx create-react-app nombre-del-proyecto</code> - Este comando crea un nuevo proyecto de React con la configuración predeterminada.</li>
+                    <li><code>cd nombre-del-proyecto</code> - Navega al directorio del proyecto.</li>
+                    <li><code>npm start</code> - Inicia el servidor de desarrollo y abre la aplicación en el navegador.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Pasos para crear un proyecto con Vite</h3>
+                <p>Para iniciar un nuevo proyecto con Vite, sigue estos pasos:</p>
+                <ul>
+                    <li><code>npm create vite@latest nombre-del-proyecto --template react</code> - Crea un nuevo proyecto Vite con la plantilla de React.</li>
+                    <li><code>cd nombre-del-proyecto</code> - Navega al directorio del proyecto.</li>
+                    <li><code>npm install</code> - Instala las dependencias del proyecto.</li>
+                    <li><code>npm run dev</code> - Inicia el servidor de desarrollo y abre la aplicación en el navegador.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Pasos para crear un servidor básico con Node.js</h3>
+                <p>Para crear un servidor básico con Node.js, sigue estos pasos:</p>
+                <ul>
+                    <li><code>mkdir nombre-del-proyecto</code> - Crea un nuevo directorio para tu proyecto.</li>
+                    <li><code>cd nombre-del-proyecto</code> - Navega al directorio del proyecto.</li>
+                    <li><code>npm init -y</code> - Inicializa un nuevo proyecto Node.js con un archivo <code>package.json</code> predeterminado.</li>
+                    <li><code>npm install http</code> - Instala el módulo <code>http</code> si es necesario.</li>
+                    <li>Luego, crea un archivo <code>server.js</code> con el siguiente código:</li>
+                    <li><code>
+                        const http = require('http');<br>
+                        const server = http.createServer((req, res) => {<br>
+                        &nbsp;&nbsp;res.statusCode = 200;<br>
+                        &nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');<br>
+                        &nbsp;&nbsp;res.end('Hola Mundo');<br>
+                        });<br>
+                        server.listen(3000, () => {<br>
+                        &nbsp;&nbsp;console.log('Servidor corriendo en http://localhost:3000');<br>
+                        });
+                    </code></li>
+                    <li><code>node server.js</code> - Inicia el servidor Node.js.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2>Ejercicio 6.1: Crear una Página con Create React App</h2>
+        <div class="exercise">
+            <p>Para este ejercicio, seguí estos pasos para crear un proyecto con <strong>Create React App</strong>:</p>
+            <ol>
+                <li>Ejecuté el siguiente comando para crear un nuevo proyecto:</li>
+                <pre><code>npx create-react-app mi-proyecto</code></pre>
+                <li>Navegué al directorio del proyecto:</li>
+                <pre><code>cd mi-proyecto</code></pre>
+                <li>Inicié el servidor de desarrollo:</li>
+                <pre><code>npm start</code></pre>
+            </ol>
+            <img src="imagessem6/1exercise.png" alt="Ejemplo de Create React App">
+        </div>
+
+        <h2>Ejercicio 6.2: Aplicación con React y Vite</h2>
+        <div class="exercise">
+            <p>Para este ejercicio, creé un proyecto usando <strong>React con Vite</strong> siguiendo estos pasos:</p>
+            <ol>
+                <li>Inicié un nuevo proyecto con el siguiente comando:</li>
+                <pre><code>npm create vite@latest mi-app --template react</code></pre>
+                <li>Navegué al directorio del proyecto:</li>
+                <pre><code>cd mi-app</code></pre>
+                <li>Instalé las dependencias:</li>
+                <pre><code>npm install</code></pre>
+                <li>Inicié el servidor de desarrollo:</li>
+                <pre><code>npm run dev</code></pre>
+            </ol>
+            <img src="imagessem6/vite-react-app.png" alt="Ejemplo de React con Vite">
+        </div>
+
+        <h2>Ejercicio 6.3: Aplicación con Next.js y React</h2>
+        <div class="exercise">
+            <p>Para este ejercicio, creé un proyecto con <strong>Next.js y React</strong> siguiendo estos pasos:</p>
+            <ol>
+                <li>Inicié un nuevo proyecto con el siguiente comando:</li>
+                <pre><code>npx create-next-app mi-next-app</code></pre>
+                <li>Navegué al directorio del proyecto:</li>
+                <pre><code>cd mi-next-app</code></pre>
+                <li>Inicié el servidor de desarrollo:</li>
+                <pre><code>npm run dev</code></pre>
+            </ol>
+            <img src="imagessem6/nextjs-logo.png" alt="Ejemplo de Next.js con React">
+        </div>
+        
+        <div class="card-container">
+            <div class="card">
+                <img src="imagessem6/whatlearn.jpeg" alt="React Image">
+                <div>
+                    <h2>Creando proyectos con React</h2>
+                    <p><strong>Lo que aprendí:</strong> Aprendí a configurar un proyecto de React utilizando Vite, una herramienta moderna que proporciona un entorno de desarrollo rápido y optimizado. Noté una mejora en el tiempo de carga y la respuesta del servidor.</p>
+                    <p><strong>Cómo lo aprendí:</strong> Lo aprendí creando un nuevo proyecto desde cero y comparando el rendimiento con Create React App. La documentación de Vite y la práctica me ayudaron a entender sus ventajas y cómo integrarlo con React.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagessem6/howlearn.jpeg" alt="Vite Image">
+                <div>
+                    <h2>Creando proyectos con Vite</h2>
+                    <p><strong>Lo que aprendí:</strong> Aprendí a configurar un proyecto de React utilizando Vite, una herramienta moderna que proporciona un entorno de desarrollo rápido y optimizado. Noté una mejora en el tiempo de carga y la respuesta del servidor.</p>
+                    <p><strong>Cómo lo aprendí:</strong> Lo aprendí creando un nuevo proyecto desde cero y comparando el rendimiento con Create React App. La documentación de Vite y la práctica me ayudaron a entender sus ventajas y cómo integrarlo con React.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagessem6/whatlearn.jpeg" alt="Node.js Image">
+                <div>
+                    <h2>Creando proyectos con Node.js</h2>
+                    <p><strong>Lo que aprendí:</strong> Aprendí a crear un proyecto con Next.js, que ofrece un enfoque de renderizado del lado del servidor (SSR) y una estructura de proyecto que facilita el desarrollo de aplicaciones web escalables.</p>
+                    <p><strong>Cómo lo aprendí:</strong> Lo aprendí siguiendo los pasos recomendados en la documentación de Next.js. Experimenté con la creación de páginas y la configuración del servidor, lo que me ayudó a comprender la arquitectura y las ventajas de Next.js para el desarrollo web.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>

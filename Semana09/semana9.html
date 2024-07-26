@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 9</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
+
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
+
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
+
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
+
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .emmet-card li {
+                margin: 5px 0;
+            }
+
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+
+            .emmet-card h3 {
+                color: #0bc4ca;
+                margin-top: 20px;
+            }
+
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1>SEMANA 09</h1>
+    </header>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Más sobre React + Vite</h2>
+        <div class="content">
+            <div>
+                <p><strong>React</strong> es una biblioteca de JavaScript para construir interfaces de usuario. Facilita la creación de aplicaciones web interactivas y dinámicas mediante el uso de componentes reutilizables y un modelo de datos unidireccional.</p>
+                <p><strong>Vite</strong> es una herramienta de desarrollo que mejora la experiencia de desarrollo de aplicaciones web. Proporciona una configuración mínima y un servidor de desarrollo rápido, así como un sistema de construcción optimizado.</p>
+                <img src="imagessem9/reactvite.jpg" alt="React y Vite Logo">
+            </div>
+            
+            
+        </div>
+        <div class="content">
+            <div>
+                <h3>Ejemplo de React</h3>
+                <p>Con React, puedes crear componentes de interfaz de usuario de manera declarativa. Por ejemplo:</p>
+                <ul>
+                    <li><code>&lt;button onClick={() => alert('Clicked!')}&gt;¡Haz clic!&lt;/button&gt;</code></li>
+                    <li><code>&lt;h1&gt;{title}&lt;/h1&gt;</code> donde <code>title</code> es una variable de estado.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ejemplo de Vite</h3>
+                <p>Con Vite, puedes iniciar un nuevo proyecto rápidamente usando un comando como:</p>
+                <ul>
+                    <li><code>npm init vite@latest my-app --template react</code></li>
+                    <li>Y luego, ejecutando <code>npm run dev</code> para iniciar el servidor de desarrollo.</li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+    
+    <div class="content">
+        <h3>Ejercicio: Crear un Proyecto con React + Vite</h3>
+        <div class="exercise">
+            <p>Para este ejercicio, seguí estos pasos para crear un proyecto usando <strong>React con Vite</strong>:</p>
+            <ol>
+                <li>Inicié un nuevo proyecto con el siguiente comando:</li>
+                <pre><code>npm create vite@latest mi-app --template react</code></pre>
+                <li>Navegué al directorio del proyecto:</li>
+                <pre><code>cd mi-app</code></pre>
+                <li>Instalé las dependencias:</li>
+                <pre><code>npm install</code></pre>
+                <li>Inicié el servidor de desarrollo:</li>
+                <pre><code>npm run dev</code></pre>
+            </ol>
+            <img src="imagessem9/vite-react-app.png" alt="Ejemplo de React con Vite">
+    
+        </div>
+
+        
+        <div class="card-container">
+                     
+            <div class="card">
+                <img src="imagessem9/whatlearn.jpeg" alt="Node.js Image">
+                <div>
+                    <h2>¿Qué aprendí?</h2>
+                    <p>Aprendí a configurar un proyecto de React utilizando Vite, una herramienta moderna que proporciona un entorno de desarrollo rápido y optimizado. Noté una mejora en el tiempo de carga y la respuesta del servidor.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagessem9/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>Lo aprendí creando un nuevo proyecto desde cero y comparando el rendimiento con Create React App. La documentación de Vite y la práctica me ayudaron a entender sus ventajas y cómo integrarlo con React.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

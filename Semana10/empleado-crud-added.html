@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web CRUD con Filtrado y Paginación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .component {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .lightblue {
+            background-color: lightblue;
+        }
+        .component img {
+            max-width: 100%;
+            height: auto;
+        }
+        .widget {
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-grid img {
+            flex: 1 0 45%;
+            margin: 5px;
+            max-width: 33%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: #fff;
+        }
+        td button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        td button.edit {
+            background-color: #3498db;
+            color: #fff;
+        }
+        td button.delete {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            width: 300px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pagination button {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Aplicación Web CRUD con Filtrado y Paginación</h1>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>1. Descripción de la Aplicación</h2>
+            <p>En este ejercicio, agregaremos funcionalidades para mostrar los datos completos del empleado en un card, filtrar datos de los empleados y agregar una barra de paginación que permita mostrar 8 empleados por página.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>2. Procedimiento</h2>
+            <ol class="steps">
+                <li><strong>Mostrar datos completos del empleado:</strong> Agregar un botón que, al ser clickeado, muestre los datos completos del empleado en un card.</li>
+                <li><strong>Filtrar datos de los empleados:</strong> Implementar un input de texto y un botón para filtrar los empleados según el criterio ingresado.</li>
+                <li><strong>Agregar barra de paginación:</strong> Implementar una barra de paginación que permita mostrar 8 empleados por página y navegar entre las páginas.</li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                import React, { useState } from 'react';
+                import EmployeeContextProvider from './components/EmployeeContext';
+                import EmployeeForm from './components/EmployeeForm';
+                import EmployeeList from './components/EmployeeList';
+
+                import './App.css';
+
+                function App() {
+                const [currentEmployee, setCurrentEmployee] = useState(null);
+
+                const editEmployee = (employee) => {
+                    setCurrentEmployee(employee);
+                };
+
+                return (
+                    <EmployeeContextProvider>
+                    
+                );
+                }
+
+                export default App;
+
+            </code>
+            <img src="imagessem10/crud-emp-final.PNG" alt="Formulario de CRUD">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados</h2>
+            <p>A continuación, se muestra una tabla con los datos de los empleados gestionados por la aplicación, incluyendo las funcionalidades de filtrado y paginación:</p>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar empleado...">
+                <button>Buscar</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Ciudad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ruth Capcha</td>
+                        <td>Av. Always Street 123</td>
+                        <td>Springfield</td>
+                        <td>
+                            <button class="edit">Editar</button>
+                            <button class="delete">Eliminar</button>
+                            <button class="view">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="prev">Anterior</button>
+                <button class="page">1</button>
+                <button class="page active">2</button>
+                <button class="page">3</button>
+                <button class="next">Siguiente</button>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>5. Datos Completos del Empleado</h2>
+            <div class="card">
+                <h3>Ruth Capcha</h3>
+                <p><strong>ID:</strong> 1</p>
+                <p><strong>Dirección:</strong> Av. Always Street 123</p>
+                <p><strong>Ciudad:</strong> Springfield</p>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>6. Resultados Finales</h2>
+            <p>Capturas de pantalla de la aplicación en funcionamiento:</p>
+            <h3>Ingreso de datos</h3>
+            <img src="imagessem10/add-crud.PNG" alt="Formulario de CRUD">
+            <h3>Editar datos</h3>
+            <img src="imagessem10/edit-crud.PNG" alt="Tabla de CRUD">
+            <h3>Eliminar datos</h3>
+            <img src="imagessem10/del-crud.PNG" alt="Tabla de CRUD">
+            <h3>Filtrar datos</h3>
+            <img src="imagessem10/filter-crud.PNG" alt="Filtro de CRUD">
+            <h3>Validación de ID</h3>
+            <img src="imagessem10/valid-emp.PNG" alt="Paginación de CRUD">
+            <h3>Paginación</h3>
+            <img src="imagessem10/pag-crud.PNG" alt="Paginación de CRUD">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aplicación Web CRUD con Filtrado y Paginación</p>
+    </footer>
+</body>
+</html>

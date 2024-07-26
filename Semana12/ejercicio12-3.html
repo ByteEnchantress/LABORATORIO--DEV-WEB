@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Multidimensional JSP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Array Multidimensional JSP</h1>
+        <p>Visualización de datos de estudiantes en una tabla estilizada</p>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>1. Descripción del Proyecto</h2>
+            <p>Declarar un array multidimensional con los datos de 10 estudiantes y mostrar estos datos en una tabla estilizada en un archivo JSP.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>2. Procedimiento</h2>
+            <ol class="steps">
+                <li>
+                    <h3>Declaración del Array Multidimensional</h3>
+                    <p>Definir el array multidimensional en un archivo JSP.</p>
+                    <img src="imagessem12/exe3table.PNG" alt="Declaración del Array">
+                </li>
+                <li>
+                    <h3>Creación de la Tabla</h3>
+                    <p>Mostrar los datos del array en una tabla HTML estilizada con CSS.</p>
+                    <img src="imagessem12/exe3style.PNG" alt="Tabla Estilizada">
+                </li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                <!-- Archivo JSP (estudiantes.jsp) -->
+                <%
+                String[][] estudiantes = {
+                    {"1", "Luis", "Padilla", "20"},
+                    {"2", "Lilo", "Galarza", "22"},
+                    {"3", "Polo", "Lopez", "21"},
+                    {"4", "Maria", "Rodríguez", "23"},
+                    {"5", "Carlos", "Sánchez", "24"},
+                    {"6", "Lucía", "Fernández", "20"},
+                    {"7", "Pedro", "Gómez", "22"},
+                    {"8", "María", "López", "21"},
+                    {"9", "Jesus", "Díaz", "23"},
+                    {"10", "Sofía", "Ramírez", "24"}
+                };
+
+                for (int i = 0; i < estudiantes.length; i++) {
+                    out.println("<tr>");
+                    for (int j = 0; j < estudiantes[i].length; j++) {
+                        out.println("<td>" + estudiantes[i][j] + "</td>");
+                    }
+                    out.println("</tr>");
+                }
+            %>
+            </code>
+            <img src="imagessem12/exe3table.PNG" alt="Código JSP de la Tabla">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados Finales</h2>
+            <p>Capturas de pantalla del JSP mostrando la tabla estilizada con los datos de los estudiantes:</p>
+            <img src="imagessem12/exe3final.PNG" alt="Resultado de la Tabla">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Visualización de Datos en JSP</p>
+    </footer>
+</body>
+</html>

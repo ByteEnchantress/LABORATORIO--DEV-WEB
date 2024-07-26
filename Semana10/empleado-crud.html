@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web CRUD con useContext y useReducer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .component {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .lightblue {
+            background-color: lightblue;
+        }
+        .component img {
+            max-width: 100%;
+            height: auto;
+        }
+        .widget {
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-grid img {
+            flex: 1 0 45%;
+            margin: 5px;
+            max-width: 33%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: #fff;
+        }
+        td button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        td button.edit {
+            background-color: #3498db;
+            color: #fff;
+        }
+        td button.delete {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Aplicación Web CRUD con useContext y useReducer</h1>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>Desarrollo de una Aplicación Web CRUD con useContext y useReducer</h2>
+            <p>En este ejercicio, desarrollaremos una aplicación web CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar los datos de un empleado utilizando <code>useContext</code> y <code>useReducer</code> de React. Además, los datos se guardarán y recuperarán de LocalStorage.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>2. Procedimiento</h2>
+            <ol class="steps">
+                <li><strong>Crear el Contexto:</strong> Definir un contexto para gestionar el estado de los empleados.</li>
+                <li><strong>Definir el Reducer:</strong> Crear un reducer para manejar las acciones de agregar, editar y eliminar empleados.</li>
+                <li><strong>Implementar el Componente del Formulario:</strong> Crear un formulario para agregar y editar empleados.</li>
+                <li><strong>Implementar el Componente de la Tabla:</strong> Crear una tabla para listar los empleados y mostrar los botones de editar y eliminar.</li>
+                <li><strong>Integrar los Componentes en la Aplicación:</strong> Añadir los componentes del formulario y la tabla a la aplicación principal y manejar el estado con el contexto y el reducer.</li>
+                <li><strong>Guardar y Recuperar Datos de LocalStorage:</strong> Implementar la lógica para guardar los datos en LocalStorage y recuperarlos al iniciar la aplicación.</li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                import React, { useReducer, useContext, useEffect } from 'react';
+                const initialState = { employees: JSON.parse(localStorage.getItem('employees')) || [] };
+
+                const reducer = (state, action) => {
+                    switch(action.type) {
+                        case 'ADD_EMPLOYEE':
+                            return { employees: [...state.employees, action.payload] };
+                        case 'EDIT_EMPLOYEE':
+                            return {
+                                employees: state.employees.map(emp => 
+                                    emp.id === action.payload.id ? action.payload : emp
+                                )
+                            };
+                        case 'DELETE_EMPLOYEE':
+                            return {
+                                employees: state.employees.filter(emp => emp.id !== action.payload)
+                            };
+                        default:
+                            return state;
+                    }
+                };
+
+                const EmployeeContext = React.createContext();
+
+                const EmployeeProvider = ({ children }) => {
+                    const [state, dispatch] = useReducer(reducer, initialState);
+
+                    useEffect(() => {
+                        localStorage.setItem('employees', JSON.stringify(state.employees));
+                    }, [state.employees]);
+
+                    return (
+                        <EmployeeContext.Provider value={{ state, dispatch }}>
+                            {children}
+                        </EmployeeContext.Provider>
+                    );
+                };
+
+                const useEmployee = () => useContext(EmployeeContext);
+
+                export { EmployeeProvider, useEmployee };
+            </code>
+            <img src="imagessem10/emp-crud.PNG" alt="Formulario de CRUD">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados</h2>
+            <p>A continuación, se muestra una tabla con los datos de los empleados gestionados por la aplicación:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Ciudad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ruth Capcha</td>
+                        <td>Av. Always Street 123</td>
+                        <td>Springfield</td>
+                        <td>
+                            <button class="edit">Editar</button>
+                            <button class="delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="project-section">
+            <h2>4. Resultados Finales</h2>
+            <p>Capturas de pantalla de la aplicación en funcionamiento:</p>
+            <h3>Ingreso de datos</h3>
+            <img src="imagessem10/add-emp.PNG" alt="Formulario de CRUD">
+            <h3>Editar datos</h3>
+            <img src="imagessem10/upd-emp.PNG" alt="Tabla de CRUD">
+            <h3>Eliminar datos</h3>
+            <img src="imagessem10/del-emp.PNG" alt="Tabla de CRUD">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aplicación Web CRUD con useContext y useReducer</p>
+    </footer>
+</body>
+</html>

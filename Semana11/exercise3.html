@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración en Next.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .component {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .lightblue {
+            background-color: lightblue;
+        }
+        .component img {
+            max-width: 100%;
+            height: auto;
+        }
+        .widget {
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-grid img {
+            flex: 1 0 30%;
+            margin: 5px;
+            max-width: 30%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: #fff;
+        }
+        td button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        td button.edit {
+            background-color: #3498db;
+            color: #fff;
+        }
+        td button.delete {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            width: 300px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pagination button {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .component img {
+            width: 100%;
+        }
+        .img-resultados{
+            background-color: #9a9b9e;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Panel de Administración en Next.js</h1>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>Descripción del Ejercicio</h2>
+            <p>Este ejercicio consiste en desarrollar un panel de administración en Next.js que incluye un layout con `header`, `aside`, `main` y `footer`. Además, se implementa una funcionalidad CRUD (Crear, Leer, Actualizar y Eliminar) utilizando la API de <a href="https://jsonplaceholder.typicode.com/posts" target="_blank">JSONPlaceholder</a>.</p>
+       
+        </div>
+
+        <div class="project-section">
+            <h2>Procedimiento</h2>
+            <ol class="steps">
+                <li>
+                    <h3>1. Configuración del Proyecto</h3>
+                    <p>Inicializar un nuevo proyecto de Next.js y configurar los componentes necesarios completar el panel de administración.</p>
+                    <img src="imagessem11/organ.PNG" alt="Configuración del Proyecto">
+                </li>
+                <li>
+                    <h3>2. Implementación del CRUD</h3>
+                    <p>Desarrollar las funcionalidades para crear, leer, actualizar y eliminar posts utilizando la API de JSONPlaceholder.</p>
+                    <h3>Create</h3>
+                    <img src="imagessem11/create.PNG" alt="Implementación del CRUD">
+                    <h3>Update and Delete</h3>
+                    <img src="imagessem11/upd_del.PNG" alt="Implementación del CRUD">
+                </li>
+                <li>
+                    <h3>3. Funcionalidades Adicionales</h3>
+                    <p>Añadir las siguientes funcionalidades adicionales:</p>
+                    <h3>Ordenación por Campo de Datos</h3>
+                    <img src="imagessem11/ordenar.PNG" alt="Ordenación de Posts">
+                    <h3>Búsqueda en el Campo Title</h3>
+                    <img src="imagessem11/filtrartitle.PNG" alt="Búsqueda en el Campo Title">
+                    <h3>Paginación de 8 en 8</h3>
+                    <img src="imagessem11/paginacion.PNG" alt="Listado de Posts con Paginación">
+                </li>
+                <li>
+                    <h3>4. Funcionalidades de Panel de Administración</h3>
+                    <p>Añadir las siguientes funcionalidades adicionales:</p>
+                    <h3>Creación de los componentes `header`</h3>
+                    <img src="imagessem11/header.PNG" >
+                    <h3>Creación de los componentes `aside`</h3>
+                    <img src="imagessem11/aside.PNG" >
+                    <h3>Creación de los componentes `main`</h3>
+                    <img src="imagessem11/main.PNG" >
+                    <h3>Creación de los componentes `footer`</h3>
+                    <img src="imagessem11/footer.PNG" >
+                    
+                </li>
+
+                <li>
+                    <h3>5. Pruebas y Depuración</h3>
+                    <p>Realizar pruebas para asegurarse de que todas las operaciones CRUD y las funcionalidades adicionales funcionen correctamente, y depurar cualquier problema encontrado.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>Resultados</h2>
+            <p>El resultado final es una aplicación funcional que permite realizar operaciones CRUD sobre los posts utilizando la API de JSONPlaceholder. A continuación se muestran algunas capturas de pantalla de la aplicación:</p>
+            <div >
+                <div >
+                    <h3>La pagina se ve de la siguiente forma</h3>
+                    <img src="imagessem11/rfinalpag.PNG" alt="Listado de Posts con Paginación">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+</body>
+</html>

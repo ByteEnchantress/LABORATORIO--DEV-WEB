@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web con useState</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .component {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .lightblue {
+            background-color: lightblue;
+        }
+        .component img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aplicación Web con useState</h1>
+        <p>Implementando componentes dinámicos con React</p>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>1. Descripción del Proyecto</h2>
+            <p>Desarrollar una aplicación web que utilice <code>useState</code> con tres componentes. Cada componente tiene un botón que cambia el color de fondo aleatoriamente.</p>
+            
+        </div>
+
+        <div class="project-section">
+            <h2>2. Componentes del Proyecto</h2>
+            <ol class="steps">
+                <li>
+                    <h3>Componente 1</h3>
+                    <p>Es un <code>div</code> con fondo de color azul y un botón centrado vertical y horizontalmente.</p>
+                    <img src="imagessem10/component1.PNG" alt="Componente 1">
+                </li>
+                <li>
+                    <h3>Componente 2</h3>
+                    <p>Es una instancia del mismo <code>Componente 1</code>, pero con su color modificado a verde durante su instanciación.</p>
+                    <img src="imagessem10/compoennet2.PNG" alt="Componente 2">
+                </li>
+                <li>
+                    <h3>Componente 3</h3>
+                    <p>Es un <code>div</code> con fondo de color celeste y tiene una fotografía con fondo transparente.</p>
+                    <img src="imagessem10/component3.PNG" alt="Componente 3">
+                </li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                import React, { createContext, useState } from 'react';
+
+                // Crear contexto
+                export const ColorContext = createContext();
+
+                export const ColorProvider = ({ children }) => {
+                const [color1, setColor1] = useState('blue');
+                const [color2, setColor2] = useState('green');
+                const [color3, setColor3] = useState('skyblue');
+
+                // Función para generar un color aleatorio
+                const getRandomColor = () => {
+                    const letters = '0123456789ABCDEF';
+                    let color = '#';
+                    for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                };
+
+                // Función para cambiar colores
+                const changeColors = () => {
+                    setColor1(getRandomColor());
+                    setColor2(getRandomColor());
+                    setColor3(getRandomColor());
+                };
+
+               
+            </code>
+            <img src="imagessem10/change-color.PNG" alt="Aplicación Final">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados Finales</h2>
+            <p>Capturas de pantalla de la aplicación en funcionamiento, mostrando los cambios de color en los componentes:</p>
+            <img src="imagessem10/rfinal1.PNG" alt="Resultado 1">
+            <img src="imagessem10/rfinal2.PNG" alt="Resultado 2">
+            <img src="imagessem10/rfinal3.PNG" alt="Resultado 3">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aplicación Web con useState</p>
+    </footer>
+</body>
+</html>
