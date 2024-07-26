@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 11</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
+
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
+
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
+
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
+
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .emmet-card li {
+                margin: 5px 0;
+            }
+
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+
+            .emmet-card h3 {
+                color: #0bc4ca;
+                margin-top: 20px;
+            }
+
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1>SEMANA 11</h1>
+    </header>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Desarrollar Aplicaciones Dinámicas con Next.js</h2>
+        <div class="content">
+            <div>
+                <img src="imagessem11/next.png" alt="Next Logo">
+                <p>Next.js es un framework fullstack JavaScript que utiliza React para crear componentes. Gracias a los "React Server Components (RSC)", Next.js permite tener componentes tanto en el servidor como en el cliente, ofreciendo flexibilidad en el método de renderizado.</p>
+            </div>
+            <div>
+                <h3>Rendering y Server-Side Rendering</h3>
+                <p>El renderizado es el proceso de convertir código JavaScript y CSS en HTML. Este proceso puede ocurrir en el servidor (Server-Side Rendering) o en el cliente (Client-Side Rendering). Next.js soporta tres métodos de renderizado:</p>
+                <ul>
+                    <li><strong>Server-Side Rendering (SSR):</strong> Renderizado de la aplicación en el servidor y envío al cliente.</li>
+                    <li><strong>Static Site Generation (SSG):</strong> Generación de sitios estáticos en tiempo de compilación.</li>
+                    <li><strong>Client-Side Rendering (CSR):</strong> Renderizado en el cliente después de que la aplicación se carga.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Componentes de Servidor y Componentes de Cliente</h3>
+                <p>Con los componentes de servidor, se puede aprovechar mejor la infraestructura del servidor, mover la obtención de datos más cerca de la base de datos y mantener dependencias grandes en el servidor, mejorando el rendimiento.</p>
+                <p>Los componentes del cliente se especifican con la directiva <code>"use client"</code> y se renderizan en el cliente.</p>
+            </div>
+            <div>
+                <h3>Typescript</h3>
+                <p>TypeScript es un superconjunto de JavaScript que añade tipado estático y objetos basados en clases, permitiendo declarar variables y objetos con tipos específicos.</p>
+            </div>
+            
+        </div>
+        <div class="content">
+            <div>
+                <h2>Ejemplo de TypeScript</h2>
+                <code>
+                    // Dato de tipo string
+                    var name: string = 'Tu nombre';
+                    name = 'Otro nombre'; // Es correcto
+                    name = 2 // Es incorrecto
+
+                    // Dato de tipo number
+                    var age: number = 29;
+                    age = 0xf00d; // Es hexadecimal y es correcto
+                    age = '3'; // Es un string e incorrecto
+
+                    // Dato de tipo boolean
+                    var havePets: boolean = true;
+                    havePets = false; // Es correcto
+                    havePets = 3 // Es incorrecto
+
+                    // Ejemplo de Interface
+                    interface Puppy { 
+                        name: string,
+                        age: number
+                    };
+
+                    const puppy: Puppy = {
+                    name: "Mascota",
+                    age: 2
+                    };
+
+                    // Ejemplo de Arreglos
+                    let arrayNumber: number[] = [1, 2, 3];
+                    let arrayString: string[] = ['1', '2', '3'];
+                </code>
+            </div>
+        </div>
+
+        
+    </div>
+         
+    
+    <div class="content">
+        <h2>Ejercicio 11.1</h2>
+        <div class="exercise">
+            <p>Desarrollar un CRUD en Next JS con componentes de servidor y ciente con la API <strong>https://jsonplaceholder.typicode.com/posts</strong></p>
+            <button><a href="exercise1.html">Ver Ejercicio 11.1</a></button>
+        </div>
+
+        <h2>Ejercicio 11.2</h2>
+        <div class="exercise">
+            <p>Desarrollar un CRUD en Next JS con componentes de servidor y ciente utilizando la API<strong> https://jsonplaceholder.typicode.com/posts</strong>. Al ejercicio 11.1 agregar las funcionalidades de:</p>
+            <ol>
+                <li>Ordenación por cada campo de datos</li>
+                <li>Busqueda en el campo title</li>
+                <li>Paginación de 8 en 8.</li>
+            </ol>
+            <button><a href="exercise2.html">Ver Ejercicio 11.2</a></button>
+        </div>
+
+        <h2>Ejercicio 11.3</h2>
+        <div class="exercise">
+            <p>Al ejercicio 11.2 agregar las funcionalidades de:</p>
+            <ol>
+                <li>Un layout y componentes tipo panel de administración con header, aside, main y footer.</li>
+            </ol>
+            <img src="images/panel.png" alt="">
+            <button><a href="exercise3.html">Ver Ejercicio 11.3</a></button>
+        </div>
+
+        <h2>Ejercicio 11.4</h2>
+        <div class="exercise">
+            <p>Al ejercicio 11.3 agregar las funcionalidades de:</p>
+            <ol>
+                <li>Sistema de Autenticación utilizando users de la API <strong>https://jsonplaceholder.typicode.com/users</strong>. Para el nombre de usuario utilice el campo username igual para la contraseña.</li>
+            </ol>
+            <button><a href="exercise-completed.html">Ver Ejercicio 11.4</a></button>
+        </div>
+
+        
+        <div class="card-container">
+            <div class="card">
+                <img src="imagessem11/whatlearn.jpeg" alt="React Image">
+                <div>
+                    <h2>¿Qué aprendí sobre Next.js?</h2>
+                    <p>Aprendí a utilizar Next.js para el renderizado de aplicaciones tanto en el servidor como en el cliente, y a manejar componentes de servidor y de cliente para optimizar el rendimiento. También mejoré mi conocimiento de TypeScript, comprendiendo cómo declarar variables con tipos específicos y cómo utilizar interfaces para estructurar objetos.</p>
+                </div>
+            </div>
+           
+            <div class="card">
+                <img src="imagessem11/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>Lo aprendí realizando ejercicios prácticos que incluían la creación de componentes con Next.js, el uso de diferentes métodos de renderizado, y la implementación de TypeScript para añadir tipado estático a mis aplicaciones. Estos ejercicios me ayudaron a entender mejor los conceptos y a aplicarlos en proyectos reales.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
