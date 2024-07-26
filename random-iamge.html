@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web con useState</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .component {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .lightblue {
+            background-color: lightblue;
+        }
+        .component img {
+            max-width: 100%;
+            height: auto;
+        }
+        .widget {
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+            
+        }
+        .image-grid {
+            /* display: flex; */
+            flex-wrap: wrap;
+        }
+        .image-grid img {
+            flex: 1 0 45%;
+            margin: 5px;
+            max-width:33%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Aplicaciones con React usando Hooks</h1>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>Desarrollo de una Aplicación Web con Hooks Personalizados y useEffect</h2>
+            <p>Desarrollar una aplicación web que utilice <code>hooks personalizados y useEffect</code> para crear un widget (150px x 150px) con una imagen(5 imagenes) que cambia aleatoriamente cada 30 segundos.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>2. Procedimiento</h2>
+            <ol class="steps">
+                <ol>
+                    <li><strong>Crear el Hook Personalizado:</strong> Este hook manejará la lógica del cambio de imagen usando el hook <code>useEffect</code> de React para actualizar la imagen cada 30 segundos.</li>
+                    <li>
+                        <strong>Definir las Imágenes:</strong>Seleccionar las 5 imágenes que se utilizarán en el widget.
+                        <h2>Imágenes del Proceso</h2>
+                        <p>Imágenes ilustrativas del widget en funcionamiento:</p>
+                        <div class="image-grid">
+                            <img src="imagessem10/img1.jpg" alt="Imagen 1 en el widget" class="widget">
+                            <img src="imagessem10/img2.jpg" alt="Imagen 2 en el widget" class="widget">
+                            <img src="imagessem10/img3.jpg" alt="Imagen 3 en el widget" class="widget">
+                            <img src="imagessem10/img4.jpg" alt="Imagen 4 en el widget" class="widget">
+                            <img src="imagessem10/img5.jpg" alt="Imagen 5 en el widget" class="widget">
+                    
+                        </div>
+                    </li>
+                    <li><strong>Implementar el Componente del Widget:</strong> Crear un componente que utilice el hook personalizado para mostrar la imagen aleatoria.</li>
+                    <li><strong>Integrar el Componente en la Aplicación:</strong> Añadir el componente del widget a la aplicación principal y probar su funcionamiento.</li>
+                </ol>
+                
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                import { useEffect, useState } from 'react';
+                import image1 from '../assets/img1.jpg';
+                import image2 from '../assets/img2.jpg';
+                import image3 from '../assets/img3.jpg';
+                import image4 from '../assets/img4.jpg';
+                import image5 from '../assets/img5.jpg';
+
+                const images = [image1, image2, image3, image4, image5];
+
+                const useRandomImage = () => {
+                const [image, setImage] = useState(images[0]);
+                const [fadeClass, setFadeClass] = useState('');
+
+                useEffect(() => {
+                    const interval = setInterval(() => {
+                    setFadeClass('fade-out');
+                    setTimeout(() => {
+                        const randomIndex = Math.floor(Math.random() * images.length);
+                        setImage(images[randomIndex]);
+                        setFadeClass('');
+                    }, 500); 
+                    }, 3000); 
+
+                    return () => clearInterval(interval); 
+                }, []);
+
+                return { image, fadeClass };
+                };
+               
+            </code>
+            <img src="imagessem10/random-image.PNG" alt="Aplicación Final">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados Finales</h2>
+            <p>Capturas de pantalla de la aplicación en funcionamiento, mostrando los cambios de imaagenes:</p>
+            <img src="imagessem10/rifinal.PNG" alt="Resultado 1">
+            <img src="imagessem10/rifinal2.PNG" alt="Resultado 2">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aplicación Web con useState</p>
+    </footer>
+</body>
+</html>
