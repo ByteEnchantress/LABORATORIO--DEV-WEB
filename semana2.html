@@ -7,39 +7,125 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
         body {
-            font-family: 'Poppins' sans-serif;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
             background-color: #f0f0f0;
         }
-        
+
         header {
             text-align: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #3ad207;
+            padding: 20px;
+            background-color: #12902f;
             color: white;
-            border-radius: 5px;
         }
 
-        h1 {
+        header h1 {
             margin: 0;
         }
 
-        h2 {
+        
+        .emmet-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .emmet-card h1 {
+            font-size: 24px;
+            color: #12902f;
+        }
+        .emmet-card h2 {
+            font-size: 20px;
+            color: black;
+        }
+
+        .emmet-card img {
+            max-width: 50%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .emmet-card .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .emmet-card .content div {
+            flex: 1 1 100%;
+        }
+
+        .emmet-card p {
+            font-size: 16px;
             color: #333;
+            margin: 10px 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content p {
+            margin-bottom: 20px;
+        }
+        .content ul {
+            margin-bottom: 20px;
+        }
+        .content ul li {
+            margin-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .code-example {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
 
         .exercise {
             background-color: #fff;
             padding: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
         }
 
         .exercise p {
+            flex: 1;
             color: #555;
+            margin: 0 20px 0 0;
+        }
+
+        .exercise img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 5px;
         }
 
         .exercise button {
@@ -49,18 +135,59 @@
             border: none;
             color: white;
             cursor: pointer;
-            margin-top: 10px;
-            background-color: #3ad207;
+            background-color: #12902f;
             transition: background-color 0.3s ease;
         }
 
         .exercise button:hover {
-            background-color: #2e8d0e;
+            background-color: #063e13;
         }
 
         .exercise a {
             text-decoration: none;
             color: white;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #d7f0f6;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .card img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card h2 {
+            color: #0c2312;
+            margin: 0 0 10px;
+        }
+
+        .card p {
+            color: #004d40;
+            font-size: 18px;
+            margin: 0;
         }
 
         .back-to-top {
@@ -73,7 +200,7 @@
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, transform 0.3s ease;
             display: flex;
             justify-content: center;
@@ -81,17 +208,16 @@
         }
 
         .back-to-top:hover {
-            background-color: #3ad207;
+            background-color: #dbf6e1;
             transform: translateY(-5px);
         }
 
         .back-to-top::before {
-            margin-top: 5px;
-            font-family: "Font Awesome 5 Free";
             content: '^';
             color: white;
             font-size: 24px;
         }
+
     </style>
 </head>
 
@@ -99,40 +225,99 @@
     <header>
         <h1>SEMANA 02</h1>
     </header>
-    <h2>Ejercicio 2.1</h2>
-    <div class="exercise">
-        <p>Diseñar botones interactivos similar a Bootstrap utilizando las clases <code>btn</code>, <code>success</code>, <code>info</code>, etc.</p>
-        <button><a href="ejercicio21.html">Ver Ejercicio 2.1</a></button>
+
+    <div class="emmet-card">
+        <h1>Tema Aprendido: </h1>
+        <h2>Definición sobre HTML y CSS</h2>
+        <img src="images/htmlcss.jpg" alt="Ejemplo de Emmet">
+        <div class="content">
+            <div>
+                <p><strong>HTML:</strong> es el lenguaje de marcado estándar para crear páginas web. Define la estructura y el contenido de una página utilizando elementos etiquetados.</p>
+                <div class="image-container">
+                    <img src="images/html.PNG" alt="Ejemplo de HTML">
+                </div>
+            </div>
+            <div>
+                <p><strong>CSS:</strong> es el lenguaje de estilos utilizado para describir la presentación de un documento HTML. Permite aplicar estilos como colores, fuentes y diseño de la página.</p>
+                <div class="image-container">
+                    <img src="images/css.PNG" alt="Ejemplo de CSS">
+                </div>
+            </div>
+            <div>
+                <p>Algunas características y ejemplos de HTML y CSS son:</p>
+                <ul>
+                    <li>HTML usa etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, y <code>&lt;div&gt;</code> para definir diferentes partes de la página.</li>
+                    <li>CSS se aplica a través de reglas que seleccionan elementos HTML y les asignan estilos. Por ejemplo:</li>
+                </ul>
+                <div class="code-example">
+                    <code>
+                        p { color: blue; }
+                    </code>
+                </div>
+                <ul>
+                    <li>Combinados, HTML y CSS permiten crear páginas web atractivas y funcionales. Por ejemplo, un contenedor con varias cajas puede definirse con HTML y estilizarse con CSS.</li>
+                </ul>
+                <div class="image-container">
+                    <img src="images/result.PNG" alt="Ejemplo de HTML y CSS">
+                </div>
+            </div>
+            
+        </div>
     </div>
 
-    <h2>Ejercicio 2.2</h2>
-    <div class="exercise">
-        <p>Diseñar botones interactivos para redes sociales utilizando clases (por ejemplo, <code>fa fa-facebook</code>) y caracteres similar a FontAwesome. Utilizar iconos de: FontAwesome.</p>
-        <button><a href="ejercicio22.html">Ver Ejercicio 2.2</a></button>
-    </div>
+    <div class="content">
+        <h2>Ejercicio 2.1</h2>
+        <div class="exercise">
+            <p>Diseñar botones interactivos similar a Bootstrap utilizando las clases <code>btn</code>, <code>success</code>, <code>info</code>, etc.</p>
+            <button><a href="ejercicio21.html">Ver Ejercicio 2.1</a></button>
+        </div>
 
-    <h2>Ejercicio 2.3</h2>
-    <div class="exercise">
-        <p>Diseñar un loader (animación de precarga) como un anillo que gira con animación infinita.</p>
-        <button><a href="ejercicio23.html">Ver Ejercicio 2.3</a></button>
-    </div>
+        <h2>Ejercicio 2.2</h2>
+        <div class="exercise">
+            <p>Diseñar botones interactivos para redes sociales utilizando clases (por ejemplo, <code>fa fa-facebook</code>) y caracteres similar a FontAwesome. Utilizar iconos de: FontAwesome.</p>
+            <button><a href="ejercicio22.html">Ver Ejercicio 2.2</a></button>
+        </div>
 
-    <h2>Ejercicio 2.4</h2>
-    <div class="exercise">
-        <p>Diseñar La estructua de página responsiva.</p>
-        <button><a href="ejercicio24.html">Ver Ejercicio 2.4</a></button>
-    </div>
+        <h2>Ejercicio 2.3</h2>
+        <div class="exercise">
+            <p>Diseñar un loader (animación de precarga) como un anillo que gira con animación infinita.</p>
+            <button><a href="ejercicio23.html">Ver Ejercicio 2.3</a></button>
+        </div>
 
-    <h2>Ejercicio 2.5</h2>
-    <div class="exercise">
-        <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: claro y oscuro. Agregar un botón para cambiar el modo.</p>
-        <button><a href="ejercicio25.html">Ver Ejercicio 2.5</a></button>
-    </div>
+        <h2>Ejercicio 2.4</h2>
+        <div class="exercise">
+            <p>Diseñar La estructua de página responsiva.</p>
+            <button><a href="ejercicio24.html">Ver Ejercicio 2.4</a></button>
+        </div>
 
-    <h2>Ejercicio 2.6</h2>
-    <div class="exercise">
-        <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: contraido y expandidos. Agregar un botón para cambiar el modo.</p>
-        <button><a href="ejercicio26.html">Ver Ejercicio 2.6</a></button>
+        <h2>Ejercicio 2.5</h2>
+        <div class="exercise">
+            <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: claro y oscuro. Agregar un botón para cambiar el modo.</p>
+            <button><a href="ejercicio25.html">Ver Ejercicio 2.5</a></button>
+        </div>
+
+        <h2>Ejercicio 2.6</h2>
+        <div class="exercise">
+            <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: contraido y expandidos. Agregar un botón para cambiar el modo.</p>
+            <button><a href="ejercicio26.html">Ver Ejercicio 2.6</a></button>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="images/whatlearn.jpeg" alt="Learning Image">
+                <div>
+                    <h2>¿Qué aprendí?</h2>
+                    <p>Aprendí a utilizar HTML y CSS para construir y estilizar páginas web. HTML permite estructurar el contenido de la web mediante etiquetas, mientras que CSS se encarga de la presentación visual y el diseño, como colores, tipografías, y disposiciones.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>El aprendizaje fue facilitado mediante la práctica constante y la realización de proyectos específicos. Al enfrentar desafíos prácticos, pude aplicar HTML y CSS en diversas situaciones, lo que me ayudó a internalizar las etiquetas y propiedades, mejorando mi fluidez en su uso. La repetición y el análisis de los resultados fueron clave para consolidar el conocimiento.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <button class="back-to-top" onclick="window.scrollTo(0, 0);"></button>
 </body>

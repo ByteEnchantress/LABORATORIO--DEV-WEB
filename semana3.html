@@ -1,140 +1,315 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios Semana 3</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Poppins' sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #3ad207;
-            color: white;
-            border-radius: 5px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 3</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
 
-        h1 {
-            margin: 0;
-        }
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
 
-        h2 {
-            color: #333;
-        }
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
 
-        .exercise {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 18px;
-        }
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
 
-        .exercise p {
-            color: #555;
-        }
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-bottom: 20px;
+            }
 
-        .exercise button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: none;
-            color: white;
-            cursor: pointer;
-            margin-top: 10px;
-            background-color: #3ad207;
-            transition: background-color 0.3s ease;
-        }
+            .emmet-card .content div {
+                flex: 1 1 45%; /* Adjust the width for a better distribution */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .exercise button:hover {
-            background-color: #2e8d0e;
-        }
+            .emmet-card h3 {
+                font-size: 18px;
+                color: #00796b;
+                margin-bottom: 10px;
+            }
 
-        .exercise a {
-            text-decoration: none;
-            color: white;
-        }
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+                text-align: center;
+            }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #01070e;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .emmet-card ul {
+                list-style: none;
+                padding: 0;
+                text-align: left;
+            }
 
-        .back-to-top:hover {
-            background-color: #3ad207;
-            transform: translateY(-5px);
-        }
-
-        .back-to-top::before {
-            margin-top: 5px;
-            font-family: "Font Awesome 5 Free";
-            content: '^';
-            color: white;
-            font-size: 24px;
-        }
-    </style>
-</head>
+            .emmet-card ul li {
+                background: #f0f0f0;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 5px 0;
+                font-family: monospace;
+            }
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
 <body>
     <header>
         <h1>SEMANA 03</h1>
     </header>
 
-    <h2>Ejercicio 3.1</h2>
-    <div class="exercise">
-        <p>Diseñar una pagina web responsive con Bootstrap que contenga una fila y 12 columnas para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
-        <button><a href="ejercicio1.html">Ver Ejercicio 3.1</a></button>
+    <div class="emmet-card">
+        <h1>Tema Aprendido: </h1>
+        <h2>Definición sobre Tailwind y Bootstrap</h2>
+        <div class="content">
+            <div>
+                <img src="imagenes/tailwind.png" alt="Tailwind CSS Logo">
+                <p><strong>Tailwind CSS:</strong> es un framework de CSS que proporciona clases utilitarias para crear diseños personalizados sin salir de tu HTML. Permite construir rápidamente interfaces de usuario con un conjunto de clases predefinidas y altamente configurables.</p>
+            </div>
+            <div>
+                <img src="imagenes/bootstraps.jpg" alt="Bootstrap Logo">
+                <p><strong>Bootstrap:</strong> es un framework de front-end que facilita el diseño de sitios web y aplicaciones web. Ofrece un sistema de rejilla, componentes preconstruidos y clases de utilidad para hacer el desarrollo web más rápido y sencillo.</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <h3>Ejemplo de Tailwind CSS</h3>
+                <p>Con Tailwind CSS, puedes crear componentes rápidamente utilizando clases utilitarias. Por ejemplo:</p>
+                <ul>
+                    <li><code>&lt;div class="bg-blue-500 text-white p-4"&gt;Contenido&lt;/div&gt;</code></li>
+                    <li><code>&lt;button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"&gt;Botón&lt;/button&gt;</code></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ejemplo de Bootstrap</h3>
+                <p>Con Bootstrap, puedes usar componentes y clases predefinidas para crear rápidamente interfaces responsivas. Por ejemplo:</p>
+                <ul>
+                    <li><code>&lt;div class="alert alert-primary" role="alert"&gt;¡Un simple aviso!&lt;/div&gt;</code></li>
+                    <li><code>&lt;button class="btn btn-primary"&gt;Botón&lt;/button&gt;</code></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <h2>Ejercicio 3.2</h2>
-    <div class="exercise">
-        <p>Desarrollar el ejercicio 3.1 con Tailwind</p>
-        <button><a href="ejercicio2.html">Ver Ejercicio 3.2</a></button>
-    </div>
+    <div class="content">
+        <h2>Ejercicio 3.1</h2>
+        <div class="exercise">
+            <p>Diseñar una pagina web responsive con Bootstrap que contenga una fila y 12 columnas para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+            <button><a href="ejercicio1.html">Ver Ejercicio 3.1</a></button>
+        </div>
 
-    <h2>Ejercicio 3.3</h2>
-    <div class="exercise">
-        <p>Desarrollar el ejercicio 3.1 con CSS puro.</p>
-        <button><a href="ejercicio3.html">Ver Ejercicio 3.3</a></button>
-    </div>
+        <h2>Ejercicio 3.2</h2>
+        <div class="exercise">
+            <p>Desarrollar el ejercicio 3.1 con Tailwind</p>
+            <button><a href="ejercicio2.html">Ver Ejercicio 3.2</a></button>
+        </div>
 
-    <h2>Ejercicio 3.4</h2>
-    <div class="exercise">
-        <p>Diseñar una pagina web responsive con Bootstrap que contenga un diseño según la plantilla [ Plantilla BootStrap. Las características de la página deberá tener el mismo contenido texto e imagenes. Así también la misma distribución, colores, diseño, animación para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
-        <button><a href="ejercicio4BT.html">Ver Ejercicio 3.4</a></button>
-    </div>
+        <h2>Ejercicio 3.3</h2>
+        <div class="exercise">
+            <p>Desarrollar el ejercicio 3.1 con CSS puro.</p>
+            <button><a href="ejercicio3.html">Ver Ejercicio 3.3</a></button>
+        </div>
 
-    <h2>Ejercicio 3.5</h2>
-    <div class="exercise">
-        <p>Desarrollar el ejercicio 3.4 con Tailwind</p>
-        <button><a href="ejercicio4TW.html">Ver Ejercicio 3.5</a></button>
-    </div>
+        <h2>Ejercicio 3.4</h2>
+        <div class="exercise">
+            <p>Diseñar una pagina web responsive con Bootstrap que contenga un diseño según la plantilla [ Plantilla BootStrap. Las características de la página deberá tener el mismo contenido texto e imagenes. Así también la misma distribución, colores, diseño, animación para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+            <button><a href="ejercicio4BT.html">Ver Ejercicio 3.4</a></button>
+        </div>
 
-    <h2>Ejercicio 3.6</h2>
-    <div class="exercise">
-        <p>Desarrollar el ejercicio 3.4 con CSS puro.</p>
-        <button><a href="ejercicio6.html">Ver Ejercicio 3.6</a></button>
-    </div>
+        <h2>Ejercicio 3.5</h2>
+        <div class="exercise">
+            <p>Desarrollar el ejercicio 3.4 con Tailwind</p>
+            <button><a href="ejercicio4TW.html">Ver Ejercicio 3.5</a></button>
+        </div>
 
+        <h2>Ejercicio 3.6</h2>
+        <div class="exercise">
+            <p>Desarrollar el ejercicio 3.4 con CSS puro.</p>
+            <button><a href="ejercicio6.html">Ver Ejercicio 3.6</a></button>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <img src="imagenes/whatlearn.jpeg" alt="Bootstrap Image">
+                <div>
+                    <h2>¿Qué aprendí sobre Bootstrap?</h2>
+                    <p>Aprendí a utilizar Bootstrap para acelerar el desarrollo de páginas web responsivas y estilizadas. Bootstrap proporciona un sistema de rejilla flexible y componentes predefinidos que facilitan la creación de interfaces de usuario modernas y consistentes.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagenes/whatlearn.jpeg" alt="Tailwind Image">
+                <div>
+                    <h2>¿Qué aprendí sobre Tailwind?</h2>
+                    <p>Aprendí a utilizar Tailwind CSS para diseñar páginas web con clases utilitarias que permiten un control detallado y preciso sobre el estilo de los elementos. Tailwind facilita la creación de diseños personalizados sin necesidad de escribir CSS desde cero.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagenes/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>El aprendizaje fue facilitado mediante la práctica constante y la realización de proyectos específicos. Al enfrentar desafíos prácticos, pude aplicar Bootstrap y Tailwind en diversas situaciones, lo que me ayudó a internalizar sus clases y propiedades, mejorando mi fluidez en su uso. La repetición y el análisis de los resultados fueron clave para consolidar el conocimiento.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
     <button class="back-to-top" onclick="window.scrollTo(0, 0);"></button>
 </body>
 </html>

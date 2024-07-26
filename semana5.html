@@ -1,132 +1,337 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios Semana 5</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Poppins' sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 5</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #a4b607;
-            color: white;
-            border-radius: 5px;
-        }
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
 
-        h1 {
-            margin: 0;
-        }
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
 
-        h2 {
-            color: #333;
-        }
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
 
-        .exercise {
-            background-color: #fff;
-            padding: 20px;
-            font-size: 18px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
 
-        .exercise p {
-            color: #555;
-        }
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
 
-        .exercise button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: none;
-            color: white;
-            cursor: pointer;
-            margin-top: 10px;
-            background-color: #a4b607;
-            transition: background-color 0.3s ease;
-        }
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
 
-        .exercise button:hover {
-            background-color: #a4b607;
-        }
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
 
-        .exercise a {
-            text-decoration: none;
-            color: white;
-        }
+            .emmet-card li {
+                margin: 5px 0;
+            }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #01070e;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
 
-        .back-to-top:hover {
-            background-color: #6f7b07;
-            transform: translateY(-5px);
-        }
+            .emmet-card h3 {
+                color: #0bc4ca;
+                margin-top: 20px;
+            }
 
-        .back-to-top::before {
-            margin-top: 5px;
-            font-family: "Font Awesome 5 Free";
-            content: '^';
-            color: white;
-            font-size: 24px;
-        }
-    </style>
-</head>
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
 <body>
     <header>
         <h1>SEMANA 05</h1>
     </header>
-    <h2>Ejercicio 5.1</h2>
-    <div class="exercise">
-        <p>Diseñar una pagina web para manipular el DOM con un botón.</p>
-        <button><a href="ejercicio51.html">Ver Ejercicio 5.1</a></button>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Definición sobre React, Vite y Node.js</h2>
+        <div class="content">
+            <div>
+                <img src="images/react.png" alt="React Logo">
+                <p><strong>React:</strong> es una biblioteca de JavaScript para construir interfaces de usuario. Facilita la creación de aplicaciones web interactivas y dinámicas mediante el uso de componentes reutilizables y un modelo de datos unidireccional.</p>
+            </div>
+            <div>
+                <img src="images/vite.jpg" alt="Vite Logo">
+                <p><strong>Vite:</strong> es una herramienta de desarrollo que mejora la experiencia de desarrollo de aplicaciones web. Proporciona una configuración mínima y un servidor de desarrollo rápido, así como un sistema de construcción optimizado.</p>
+            </div>
+            <div>
+                <img src="images/node.jpeg" alt="Node.js Logo">
+                <p><strong>Node.js:</strong> es un entorno de ejecución para JavaScript que permite ejecutar código JavaScript en el servidor. Facilita la creación de aplicaciones de red escalables y de alto rendimiento, utilizando un modelo de E/S no bloqueante.</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <h3>Ejemplo de React</h3>
+                <p>Con React, puedes crear componentes de interfaz de usuario de manera declarativa. Por ejemplo:</p>
+                <ul>
+                    <li><code>&lt;button onClick={() => alert('Clicked!')}&gt;¡Haz clic!&lt;/button&gt;</code></li>
+                    <li><code>&lt;h1&gt;{title}&lt;/h1&gt;</code> donde <code>title</code> es una variable de estado.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ejemplo de Vite</h3>
+                <p>Con Vite, puedes iniciar un nuevo proyecto rápidamente usando un comando como:</p>
+                <ul>
+                    <li><code>npm init vite@latest my-app --template react</code></li>
+                    <li>Y luego, ejecutando <code>npm run dev</code> para iniciar el servidor de desarrollo.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ejemplo de Node.js</h3>
+                <p>Con Node.js, puedes crear un servidor básico utilizando el módulo <code>http</code>. Por ejemplo:</p>
+                <ul>
+                    <li><code>
+                        const http = require('http');<br>
+                        const server = http.createServer((req, res) => {<br>
+                        &nbsp;&nbsp;res.statusCode = 200;<br>
+                        &nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');<br>
+                        &nbsp;&nbsp;res.end('Hola Mundo');<br>
+                        });<br>
+                        server.listen(3000, () => {<br>
+                        &nbsp;&nbsp;console.log('Servidor corriendo en http://localhost:3000');<br>
+                        });
+                    </code></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
+    <div class="content">
+        <h2>Ejercicio 5.1</h2>
+        <div class="exercise">
+            <p>Diseñar una pagina web para manipular el DOM con un botón.</p>
+            <button><a href="ejercicio51.html">Ver Ejercicio 5.1</a></button>
+        </div>
 
-    <h2>Ejercicio 5.2</h2>
-    <div class="exercise">
-        <p>Desarrollar una aplicación para manipular el DOM con addEventListener, mostrando la reactividad de Javascript mediante un input text y un parrafo.</p>
-        <button><a href="ejercicio52.html">Ver Ejercicio 5.2</a></button>
+        <h2>Ejercicio 5.2</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación para manipular el DOM con addEventListener, mostrando la reactividad de Javascript mediante un input text y un parrafo.</p>
+            <button><a href="ejercicio52.html">Ver Ejercicio 5.2</a></button>
+        </div>
+
+        <h2>Ejercicio 5.3</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación para obtener y manipular datos del DOM, mostrando un formulario con 2 input text para el ingreso de numeros y mostrar el resultado de la suma.</p>
+            <button><a href="ejercicio53.html">Ver Ejercicio 5.3</a></button>
+        </div>
+
+        <h2>Ejercicio 5.4</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
+            <button><a href="ejercicio54.html">Ver Ejercicio 5.4</a></button>
+        </div>
+
+        <h2>Ejercicio 5.5</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación orientado a objetos que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
+            <button><a href="ejercicio55.html">Ver Ejercicio 5.5</a></button>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="images/whatlearn.jpeg" alt="React Image">
+                <div>
+                    <h2>¿Qué aprendí sobre React?</h2>
+                    <p>Aprendí a utilizar React para construir interfaces de usuario interactivas y dinámicas. React facilita la creación de componentes reutilizables y mantiene el estado de la aplicación de manera eficiente, lo que resulta en una experiencia de desarrollo más modular y escalable.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/whatlearn.jpeg" alt="Vite Image">
+                <div>
+                    <h2>¿Qué aprendí sobre Vite?</h2>
+                    <p>Aprendí a utilizar Vite como una herramienta de desarrollo rápida y eficiente. Vite proporciona una configuración mínima, un servidor de desarrollo ultrarrápido y un sistema de construcción optimizado, lo que mejora significativamente la experiencia de desarrollo de aplicaciones web modernas.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/whatlearn.jpeg" alt="Node.js Image">
+                <div>
+                    <h2>¿Qué aprendí sobre Node.js?</h2>
+                    <p>Aprendí a utilizar Node.js para construir aplicaciones de servidor escalables y de alto rendimiento. Node.js permite ejecutar JavaScript en el servidor, facilitando la creación de aplicaciones de red con un modelo de E/S no bloqueante y un ecosistema de paquetes robusto.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>El aprendizaje fue facilitado mediante la práctica constante y la realización de proyectos específicos. Al enfrentar desafíos prácticos, pude aplicar React, Vite, y Node.js en diversas situaciones, lo que me ayudó a internalizar sus características y mejores prácticas, mejorando mi fluidez en su uso. La repetición y el análisis de los resultados fueron clave para consolidar el conocimiento.</p>
+                </div>
+            </div>
+        </div>
+        
     </div>
-
-    <h2>Ejercicio 5.3</h2>
-    <div class="exercise">
-        <p>Desarrollar una aplicación para obtener y manipular datos del DOM, mostrando un formulario con 2 input text para el ingreso de numeros y mostrar el resultado de la suma.</p>
-        <button><a href="ejercicio53.html">Ver Ejercicio 5.3</a></button>
-    </div>
-
-    <h2>Ejercicio 5.4</h2>
-    <div class="exercise">
-        <p>Desarrollar una aplicación que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
-        <button><a href="ejercicio54.html">Ver Ejercicio 5.4</a></button>
-    </div>
-
-    <h2>Ejercicio 5.5</h2>
-    <div class="exercise">
-        <p>Desarrollar una aplicación orientado a objetos que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
-        <button><a href="ejercicio55.html">Ver Ejercicio 5.5</a></button>
-    </div>
-
 </body>
 </html>
