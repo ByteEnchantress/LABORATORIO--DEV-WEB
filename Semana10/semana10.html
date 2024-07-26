@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 10</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
+
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
+
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
+
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
+
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .emmet-card li {
+                margin: 5px 0;
+            }
+
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+
+            .emmet-card h3 {
+                color: #0bc4ca;
+                margin-top: 20px;
+            }
+
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1>SEMANA 10</h1>
+    </header>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Desarrollo de Aplicaciones Dinámicas con React usando Hooks</h2>
+        <div class="content">
+            <div>
+                <p><strong>Hooks</strong> son funciones de JavaScript que permiten crear y acceder al estado y al ciclo de vida del componente en React.</p>
+                <p>Lista de Hooks importantes:</p>
+                <ul>
+                    <li><strong>useState:</strong> Permite agregar estado local a componentes funcionales.</li>
+                    <li><strong>useEffect:</strong> Permite realizar efectos secundarios en componentes funcionales.</li>
+                    <li><strong>useContext:</strong> Permite acceder a un contexto en un componente funcional.</li>
+                    <li><strong>useReducer:</strong> Maneja el estado complejo con lógica de reducción.</li>
+                    <li><strong>useRef:</strong> Permite crear referencias mutables que persisten entre renderizados.</li>
+                    <li><strong>useNavigate:</strong> Permite la navegación programática entre rutas en React Router.</li>
+                    <li><strong>useParams:</strong> Accede a los parámetros de la URL en React Router.</li>
+                </ul>
+                <img src="imagessem10/usando-hooks-en-react.jpg" alt="React Logo">
+            </div>
+            
+        </div>
+        <div class="content">
+            <div>
+                <h3>Gestión de Estados en React</h3>
+                <p>La gestión de estados es el proceso de seguimiento y actualización del estado de una aplicación. El estado es la condición actual de una aplicación, como la ubicación del usuario, los artículos en su carrito de compras o el estado de un juego.</p>
+                <p>El estado de un componente es un objeto que contiene los datos (variables) que necesitamos para representarla en la interfaz u otro contexto.</p>
+            </div>
+            <div>
+                <h3>Ejemplos de Hooks en React</h3>
+                <p><strong>useState:</strong> Permite agregar estado local a componentes funcionales.</p>
+                <pre><code>
+                    import React, { useState } from 'react';
+
+                    function Contador() {
+                        const [contador, setContador] = useState(0);
+
+                        return (
+                            &lt;div&gt;
+                                &lt;p&gt;Contador: {contador}&lt;/p&gt;
+                                &lt;button onClick={() => setContador(contador + 1)}&gt;Incrementar&lt;/button&gt;
+                            &lt;/div&gt;
+                        );
+                    }
+                </code></pre>
+
+                <p><strong>useEffect:</strong> Permite realizar efectos secundarios en componentes funcionales.</p>
+                <pre><code>
+                    import React, { useState, useEffect } from 'react';
+
+                    function Temporizador() {
+                        const [segundos, setSegundos] = useState(0);
+
+                        useEffect(() => {
+                            const intervalo = setInterval(() => {
+                                setSegundos(segundos => segundos + 1);
+                            }, 1000);
+
+                            return () => clearInterval(intervalo);
+                        }, []);
+
+                        return &lt;p&gt;Segundos: {segundos}&lt;/p&gt;;
+                    }
+                </code></pre>
+
+                <p><strong>useContext:</strong> Permite acceder a un contexto en un componente funcional.</p>
+                <pre><code>
+                    import React, { useContext } from 'react';
+
+                    const TemaContext = React.createContext('light');
+
+                    function MostrarTema() {
+                        const tema = useContext(TemaContext);
+                        return &lt;div&gt;Tema actual: {tema}&lt;/div&gt;;
+                    }
+                </code></pre>
+             </div>
+            
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2>Ejercicio 10.1</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación web que utilice usestate con tres componentes:</p>
+            <p>Implementar un código en el boton para cambiar el color de fondo aleatoriamente en los 3 componentes.</p>
+            <ol>
+                <li>Componente1 es un div de fondo de color azul tiene un botón centrado vertical y horizontalmente.</li>
+                <li>Componente2: es una instancia del mismo componente1, pero su color modificado a verde durante su instanciación.</li>
+                <li>Componente3: es un div de fondo de color celeste y tiene con su fotografia con fondo transparente.</li>
+            </ol>
+            <button><a href="change-color.html">Ver Ejercicio 10.1</a></button>
+        </div>
+
+        <h2>Ejercicio 10.2</h2>
+        <div class="exercise">
+            <p> Desarrollar una aplicación web con hooks personalizados y useEffect para crear un widget (150px x 150px) con una imagen(5 imagenes) que cambia aleatoriamente cada 30 segundos.</p>
+            <button><a href="random-iamge.html">Ver Ejercicio 10.2</a></button>
+        </div>
+
+        <h2>Ejercicio 10.3</h2>
+        <div class="exercise">
+            <p>Desarrollar una aplicación web CRUD para gestionar los datos de un empleado(id, name, address, city) que permita agregar, editar y eliminar objetos utilizando useContext y useReducer. Además el objeto deberá guardar y recuperar del LocalStorage.</p>
+            <button><a href="empleado-crud.html">Ver Ejercicio 10.3</a></button>
+        </div>
+
+        <h2>Ejercicio 10.4</h2>
+        <div class="exercise">
+            <p>En Ejercicio 10.4 agregar las funcionalidades de:</p>
+            <ol>
+                <li>Agregar un botón para Mostrar los datos completos del empleado en un card.</li>
+                <li>Agregar un input text y button para filtrar datos de los empleados</li>
+                <li>Agregar una barra de paginación que permita mostrar 8 empleados por página.</li>
+            </ol>
+            <button><a href="empleado-crud-added.html">Ver Ejercicio 10.4</a></button>
+        </div>
+
+
+        <div class="card-container">
+            <div class="card">
+                <img src="imagessem10/whatlearn.jpeg" alt="React Image">
+                <div>
+                    <h2>¿Qué aprendí?</h2>
+                    <p>Aprendí a utilizar diferentes Hooks de React para gestionar el estado y los efectos secundarios en componentes funcionales. Los Hooks me permiten escribir componentes más limpios y concisos sin necesidad de convertirlos en componentes de clase.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="imagessem10/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p> Lo aprendí a través de la práctica, creando ejemplos sencillos que implementan cada uno de los Hooks importantes y observando cómo simplifican el código comparado con la gestión de estado y ciclo de vida en componentes de clase.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
