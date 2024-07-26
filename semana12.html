@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios Semana 12</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            body {
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+    
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #0bc4ca;
+                color: white;
+            }
+    
+            header h1 {
+                margin: 0;
+            }
+    
+            .emmet-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            .emmet-card h1 {
+                font-size: 24px;
+                color: #0bc4ca;
+            }
+
+            .emmet-card h2 {
+                font-size: 20px;
+                color: black;
+            }
+
+            .emmet-card img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .emmet-card .content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .emmet-card .content div {
+                flex: 1 1 100%;
+            }
+
+            .emmet-card p {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0;
+            }
+
+            .emmet-card ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .emmet-card li {
+                margin: 5px 0;
+            }
+
+            .emmet-card code {
+                background-color: #f4f4f4;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+
+            .emmet-card h3 {
+                color: #0bc4ca;
+                margin-top: 20px;
+            }
+
+            .emmet-card div img {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+    
+            .content {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+    
+            .exercise {
+                background-color: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+    
+            .exercise p {
+                flex: 1;
+                color: #555;
+                margin: 0 20px 0 0;
+            }
+    
+            .exercise img {
+                max-width: 150px;
+                height: auto;
+                border-radius: 5px;
+            }
+    
+            .exercise button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                background-color: #0bc4ca;
+                transition: background-color 0.3s ease;
+            }
+    
+            .exercise button:hover {
+                background-color: #0c7b7e;
+            }
+    
+            .exercise a {
+                text-decoration: none;
+                color: white;
+            }
+    
+            .card-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+    
+            .card {
+                background-color: #d7f0f6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .card img {
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 20px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover img {
+                transform: scale(1.05);
+            }
+    
+            .card h2 {
+                color: #00796b;
+                margin: 0 0 10px;
+            }
+    
+            .card p {
+                color: #004d40;
+                font-size: 18px;
+                margin: 0;
+            }
+    
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #01070e;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .back-to-top:hover {
+                background-color: #0bc4ca;
+                transform: translateY(-5px);
+            }
+    
+            .back-to-top::before {
+                content: '^';
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1>SEMANA 12</h1>
+    </header>
+    <div class="emmet-card">
+        <h1>Tema Aprendido:</h1>
+        <h2>Jakarta Server Pages (JSP)</h2>
+        <div class="content">
+            <div>
+                <img src="imagessem12/jsp.png" alt="JSP Logo">
+                <p><strong>Jakarta Server Pages (JSP):</strong> es un lenguaje de scripting del lado del servidor que permite la creación de aplicaciones web dinámicas. JSP se basa en Java y tiene acceso completo a las API de Java, incluyendo JDBC para interactuar con bases de datos.</p>
+            </div>
+            
+        </div>
+        <div class="content">
+            <div>
+                <h2>Elementos de JSP</h2>
+                <div class="example">
+                    <h3>Scriptlet</h3>
+                    <p>Un scriptlet en JSP permite incluir fragmentos de código Java en una página JSP. Se puede usar para ejecutar cualquier código Java válido.</p>
+                    <code>
+                        &lt;%<br>
+                        out.println("Hola desde JSP");<br>
+                        %&gt;
+                    </code>
+                </div>
+
+            </div>
+            <div>
+                <div class="example">
+                    <h3>Declaraciones</h3>
+                    <p>Una declaración en JSP se usa para definir variables o métodos que se utilizarán en el resto del archivo JSP. Las declaraciones deben hacerse antes de usarlas.</p>
+                    <code>
+                        &lt;%!<br>
+                        int i = 0;<br>
+                        int a, b, c;<br>
+                        Circle a = new Circle(2.0);<br>
+                        %&gt;
+                    </code>
+                </div>
+            </div>
+            <div>
+                <div class="example">
+                    <h3>Expresiones</h3>
+                    <p>Una expresión en JSP se evalúa y se convierte en HTML en la página resultante. Se utiliza para insertar dinámicamente datos en el contenido HTML.</p>
+                    <code>
+                        &lt;html&gt;<br>
+                        &lt;head&gt;&lt;title>A Comment Test&lt;/title&gt;&lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        &lt;p&gt;Today's date: <br>
+                        &lt;%= (new java.util.Date()).toLocaleString()%&gt;<br>
+                        &lt;/p&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;
+                    </code>
+                </div>
+            </div>
+            <div>
+                <h2>Recursos Adicionales</h2>
+                <p>Para más información sobre Jakarta Server Pages y Jakarta EE, visita los siguientes enlaces:</p>
+                <div class="resource-links">
+                    <p><a href="https://jakarta.ee/" target="_blank">Jakarta EE</a></p>
+                    <p><a href="https://jakarta.ee/specifications/pages/3.0/" target="_blank">Jakarta Server Pages (JSP) 3.0</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2>Ejercicio 12.1</h2>
+        <div class="exercise">
+            <p>Desarrollar un formulario con nombre apellidos (input text) genero (input radio) pasatiempos: futbol, natación, lectura (input check) capturar los datos y mostrarlos en otro archivo jsp mediante el método get.</p>
+            <button><a href="ejercicio12-1.html">Ver Ejercicio 12.1</a></button>
+        </div>
+
+        <h2>Ejercicio 12.2</h2>
+        <div class="exercise">
+            <p>Desarrollar un formulario con nombre apellidos (input text) genero (input radio) pasatiempos: futbol, natación, lectura (input check) capturar los datos y mostrarlos en otro archivo jsp mediante el método post.</p>
+            <button><a href="ejercicio12-2.html">Ver Ejercicio 12.2</a></button>
+        </div>
+
+        <h2>Ejercicio 12.3</h2>
+        <div class="exercise">
+            <p>Declare un array multidimensional con los datos de 10 estudiantes y mostrarlos en un JSP que muestre una tabla estilizada con css.</p>
+            <button><a href="ejercicio12-3.html">Ver Ejercicio 12.3</a></button>
+        </div>
+
+        <h2>Ejercicio 12.4</h2>
+        <div class="exercise">
+            <p>Desarrolle un CRUD completo en JSP con una base de datos en MySQL utilizando JDBC para una tabla estudiante.</p>
+            <button><a href="ejercicio12-4.html">Ver Ejercicio 12.4</a></button>
+        </div>
+
+        
+
+        <div class="card-container">
+            <div class="card">
+                <img src="imagessem12/whatlearn.jpeg" alt="React Image">
+                <div>
+                    <h2>¿Qué aprendí sobre JSP?</h2>
+                    <p>Aprendí que los scriptlets permiten la inserción directa de lógica Java en el código HTML, facilitando la creación de contenido dinámico en la web. Ademas, las declaraciones son útiles para definir variables y métodos que se mantendrán durante el ciclo de vida de la página JSP, lo que permite un código más organizado y reutilizable. Complementado con que las expresiones en JSP son una forma poderosa de generar contenido dinámico y de actualizar la información en tiempo real, lo que mejora la interacción con el usuario.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="imagessem12/howlearn.jpeg" alt="Practice Image">
+                <div>
+                    <h2>¿Cómo aprendí?</h2>
+                    <p>Aprendí JSP mediante la creación de ejemplos prácticos y la revisión de la documentación oficial. Implementé y probé los conceptos básicos como scriptlets, declaraciones y expresiones en proyectos reales, lo que me permitió entender cómo integrarlos en páginas web dinámicas.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

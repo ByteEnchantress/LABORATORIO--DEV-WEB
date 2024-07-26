@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario JSP con POST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAld4eVRJqBz17E9El2xftVxIpYzz5KQO4IA4" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282c34;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project-section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-section h2 {
+            text-align: center;
+            color: #282c34;
+        }
+        .project-section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .project-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .project-section code {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            background-color: #e7f3ff;
+            border-left: 5px solid #007bff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .steps li h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #282c34;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulario JSP con Método POST</h1>
+        <p>Desarrollando un formulario para capturar y mostrar datos usando JSP y POST</p>
+    </header>
+
+    <div class="container">
+        <div class="project-section">
+            <h2>1. Descripción del Proyecto</h2>
+            <p>Desarrollar un formulario que permita ingresar nombre, apellidos, género y pasatiempos (fútbol, natación, lectura). Capturar los datos utilizando el método POST y mostrarlos en otro archivo JSP.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>2. Procedimiento</h2>
+            <ol class="steps">
+                <li>
+                    <h3>Formulario de Entrada</h3>
+                    <p>Crear un formulario con campos para nombre, apellidos, género y pasatiempos. Capturar los datos del formulario y enviarlos utilizando el método POST.</p>
+                    <img src="imagessem12/exe2index.PNG" alt="Formulario de Entrada">
+                </li>
+               
+                <li>
+                    <h3>Visualización de Datos</h3>
+                    <p>Mostrar los datos capturados en otro archivo JSP utilizando el método POST.</p>
+                    <img src="imagessem12/exe2mostrar.PNG" alt="Visualización de Datos">
+                </li>
+            </ol>
+        </div>
+
+        <div class="project-section">
+            <h2>3. Código de Implementación</h2>
+            <code>
+                <!-- Formulario JSP (formulario.jsp) -->
+                <form action="resultado.jsp" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required><br><br>
+                    <label>Género:</label>
+                    <input type="radio" id="masculino" name="genero" value="Masculino" required>
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="femenino" name="genero" value="Femenino" required>
+                    <label for="femenino">Femenino</label><br><br>
+                    <label>Pasatiempos:</label>
+                    <input type="checkbox" id="futbol" name="pasatiempos" value="Futbol">
+                    <label for="futbol">Fútbol</label>
+                    <input type="checkbox" id="natacion" name="pasatiempos" value="Natación">
+                    <label for="natacion">Natación</label>
+                    <input type="checkbox" id="lectura" name="pasatiempos" value="Lectura">
+                    <label for="lectura">Lectura</label><br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+
+                <!-- Resultado JSP (resultado.jsp) -->
+                <%
+                    String nombre = request.getParameter("nombre");
+                    String apellidos = request.getParameter("apellidos");
+                    String genero = request.getParameter("genero");
+                    String[] pasatiempos = request.getParameterValues("pasatiempos");
+                %>
+                <h2>Datos Capturados</h2>
+                <p><strong>Nombre:</strong> <%= nombre %></p>
+                <p><strong>Apellidos:</strong> <%= apellidos %></p>
+                <p><strong>Género:</strong> <%= genero %></p>
+                <p><strong>Pasatiempos:</strong> <%= String.join(", ", pasatiempos) %></p>
+            </code>
+            <img src="imagessem12/exe2form.PNG" alt="Código del Formulario con POST">
+        </div>
+
+        <div class="project-section">
+            <h2>4. Resultados Finales</h2>
+            <p>Capturas de pantalla del formulario en funcionamiento y de la visualización de los datos enviados:</p>
+            <img src="imagessem12/exe2formfinal.PNG" alt="Resultado del Formulario">
+            <img src="imagessem12/exe2show.PNG" alt="Visualización de Datos POST">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Desarrollo de Formulario JSP con POST</p>
+    </footer>
+</body>
+</html>
